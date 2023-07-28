@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link href='http://cdn.webfont.youziku.com/webfonts/nomal/125895/46024/5c09cfe5f629de0778a43de6.css' rel='stylesheet' type='text/css' />
+		<title>
+			steven小屋
+		</title>
+		<style type="text/css">
+			*{
+				margin: 0px;padding: 0px;
+			}
+			body{
+				margin: 0px;padding: 0px;
+			}
+			.r{float: right;}
+			.l{float: left;}
+			.bl{display: block;}
+			.ab{position: absolute;}
+			.re{position: relative;}
+			ul{list-style: none;}
+			a{text-decoration: none;
+			color: black;}
+			@font-face {
+				font-family: "z1";
+				src: url("font/f.ttf");
+			}@font-face {
+				font-family: "z2";
+				src: url("font/e.otf");
+			}
+			}@font-face {
+				font-family: "z3";
+				src: url("font/d.ttf");
+			}
+			#all{
+				width: 100%;
+				height: auto;
+				background: rgb(13,36,54);
+			}
+			#top{
+				width: 1200px;
+				height: 180px;
+				margin: 0px auto;
+				background: url(img/top-bg.jpg) no-repeat;
+				background-position: -110px 0px;
+			}
+			#top h1{
+				font-family: z3;
+				margin: 30px 60px 0px 0px;
+				font-size: 45px;
+				color: azure;
+			}
+			.logo{
+				margin: 15px 0px 0px 60px;
+			}
+			/*.search{
+				height: 30px;width: 155px;
+				top: 71px;left: 100px;
+			}
+			.searchr{
+				height: 26px;width: 120px;
+				background: #F1F1F1;
+			}
+			.searchl{
+				height: 30px;width: 25px;
+				background: url(img/wpfsearch.jpg) no-repeat center;
+				background-size: 100% 100%;
+				border-right: 2px;
+				display: block;
+				float: left;
+			}*/
+			#navigation{
+				width: 1000px;
+				height: 40px;
+				margin: 0px auto;
+				background: rgb(31,136,217);
+				border-bottom: 2px solid #F0F8FF;
+			}
+			#navigation li{
+				font-family: z2;
+				font-size: 21px;
+			}
+			.guide{
+				width: 900px;
+				height: 40px;
+			}
+			.guide li{
+				width: 150px;
+				text-align: center;
+				line-height: 40px;
+				border-color: rgb(180,180,180);
+			}
+			.lir{
+				border-left-style: solid;
+			}
+			.lir:hover{
+				background: url(img/menu.jpg) center;
+			}
+			.ma{
+				color: white;
+			}
+			#banner{
+				width: 1000px;
+				height: 300px;
+				margin: 0px auto;
+				background: url(img/banner_wrapper.png);
+			}
+			#banner1{
+				height: 250px;
+				width: 100%;
+				position: relative;
+				top: 25px;
+			}
+			.pic1{
+				width: 300px;
+				height: 150px;
+				position: absolute;
+				top: 50px;
+				left: 100px;
+				padding: 10px;
+				border-color: white;
+				border-style: solid;
+			}
+			.art{
+				width: 280px;
+				color: white;
+				position: absolute;
+				top: 10px;
+				right: 180px;
+			}
+			.container {
+	            position: relative;
+	            width: 1000px;
+	            height: 420px;
+	            margin:20px auto ;
+	            box-shadow: 0 0 5px green;
+	            overflow: hidden;
+	        }
+	        .container .wrap {
+	            position: absolute;
+	            width: 7000px;
+	            height: 420px;
+	            z-index: 1;
+	        }
+	        .container .wrap img {
+	            float: left;
+	            width: 1000px;
+	            height: 420px;
+	        }
+	        .container .buttons {
+	            position: absolute;
+	            right: 5px;
+	            bottom:40px;
+	            width: 150px;
+	            height: 10px;
+	            z-index: 2;
+	        }
+	        .container .buttons span {
+	            margin-left: 5px;
+	            display: inline-block;
+	            width: 20px;
+	            height: 20px;
+	            border-radius: 50%;
+	            background-color: green;
+	            text-align: center;
+	            color:white;
+	            cursor: pointer;
+	        }
+	        .container .buttons span.on{
+	            background-color: red;
+	        }
+	        .container .arrow_left,.arrow_right {
+	            position: absolute;
+	            top: 40%;
+	            color: cornflowerblue;
+	            padding:0px 14px;
+	            border-radius: 50%;
+	            font-size: 50px;
+	            z-index: 2;
+	            display: none;
+	        }
+	        .container .arrow_left {
+	            left: 10px;
+	        }
+	        .container .arrow_right {
+	            right: 10px;
+	        }
+	        .container:hover .arrow_left {
+	            display: block;
+	        }
+	        .container:hover .arrow_right {
+	            display: block;
+	        }
+	        .container .arrow_left:hover {
+	            background-color: rgba(0,0,0,0.2);
+	        }
+	        .container .arrow_right:hover {
+	            background-color: rgba(0,0,0,0.2);
+	        }
+			#main{
+				width: 1000px;
+				height: 1780px;
+				margin: 0px auto;
+				background: rgb(209,209,209);
+			}
+			#main p{
+				font-size: 14px;
+				line-height: 20px;
+				text-indent: 28px;
+			    height: 197px;width: 450px;
+		     	padding-top: 28px;
+			}
+			#main h1{
+				height: 40px;
+				margin: 0px;
+				font-family: z1;
+				font-size: 35px;
+				color: #566F89;
+				text-shadow: -1px -1px rgba(197, 223, 248,0.8),-2px -2px rgba(197, 223, 248,0.8),-3px -3px rgba(197, 223, 248,0.8),-4px -4px rgba(197, 223, 248,0.8),-5px -5px rgba(197, 223, 248,0.8),-6px -6px rgba(197, 223, 248,0.8);
+			}
+			.hr{
+				text-align: right;
+				top: 50px;right: 150px;
+			}
+			.hl{
+				top:50px;left: 150px;
+			}
+			.primary_school{
+				height: 264px;
+			    width: 1000px;
+			}
+			.primary_school img{
+				top: 25px;left: 30px;
+				border-left: skyblue solid 4px;
+				border-top: skyblue solid 4px;
+				border-top-left-radius: 30px;
+				padding: 10px 0px 0px 10px;
+			}
+			.primary_school span{
+			}
+			.primary_school p{
+				right: 35px;top:40px;
+				border-right: skyblue groove 4px;
+				padding-right: 10px;
+			}
+			.middle_school{
+				height: 289px;
+				width: 1000px;
+			}
+			.middle_school img{
+				top: 50px;right: 30px;
+				border-right: skyblue solid 4px;
+				border-top: skyblue solid 4px;
+				border-top-right-radius: 30px;
+				padding: 10px 10px 0px 0px;
+			}
+			.middle_school p{
+				left: 35px;top:65px;
+				border-left: skyblue groove 4px;
+				padding-left: 17px;
+			}
+			.high_school{
+				height: 289px;
+				width: 1000px;
+			}
+			.high_school img{
+				top: 50px;left: 30px;
+				border-left: skyblue solid 4px;
+				border-bottom: skyblue solid 4px;
+				border-bottom-left-radius: 30px;
+				padding: 0px 0px 10px 10px;
+			}
+			.high_school p{
+				right: 35px;top:65px;
+				border-right: skyblue groove 4px;
+				padding-right: 10px;
+			}
+			.university{
+				height: 289px;
+				width: 1000px;
+			}
+			.university img{
+				top: 50px;right: 30px;
+				border-right: skyblue solid 4px;
+				border-bottom: skyblue solid 4px;
+				border-bottom-right-radius: 30px;
+				padding: 0px 10px 10px 0px;
+			}
+			.university p{
+				left: 35px;top:65px;
+				border-left: skyblue groove 4px;
+				padding-left: 17px;
+			}
+			#foot{
+				width: 100%;
+				height: 120px;
+				margin: 0px auto;
+				background: url(img/foot_wrapper.png) repeat-x;
+				font-size: small;
+			}
+			.foot_menu{
+				width: 1000px;
+				height: 50px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			.foot_menu ul{
+				height: 30px;
+				line-height: 30px;
+				margin: 0 auto;
+				padding-top: 10px;
+				left: 150px;
+			}
+			.foot_menu li{
+				width: 100px;
+				border-left-style:solid ;
+				border-left-width: 2px;
+				border-color: aliceblue;
+			}
+            .foot_menu a:hover{
+	            color: aliceblue;
+			}
+			.share{
+				top: 5px;
+				right: 100px;
+				width: 220px;
+				height: 40px;
+				width: 220px;
+				background: url(img/share.png) top;
+			}
+			.share:hover{
+				background: url(img/share.png);
+				background-position: 0px 47px;
+			}
+			.foot_menu p{
+				right: 320px;
+				top: 15.6px;
+				margin: 0 auto;			
+			}
+			.go_top{
+				text-align: center;
+				adding-top: 10px;
+			}
+			.copyright{
+				width: 1000px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			#go_top{
+				position: fixed;
+				right: 50px;
+				bottom: 100px;
+			}
+			/*#toTop {
+				display: none;
+				position: fixed;
+				bottom: 14px;
+				right: 3%;
+				overflow: hidden;
+				width: 40px;
+				height: 40px;
+				border: none;
+				text-indent: 100%;
+				background: url(img/to-top.png) no-repeat 0px 0px;
+            }
+            #toTopHover {
+            	width: 40px;
+            	height: 40px;
+            	display: block;
+            	overflow: hidden;
+            	float: right;
+            	opacity: 0;
+            	-moz-opacity: 0;
+            	ilter: alpha(opacity=0);
+            }*/
+		</style>
+		
+		<!--<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+		<script type="text/javascript">
+			 $("#go_top").click(function () {
+        var speed=5000;    //设置滑动的速度
+        $('body,html').animate({ scrollTop: 0 }, speed);
+        return false;
+    });-->
+		</script>
+		    
+		    
+		     
+		<script>
+	
+//			(function($){$.fn.UItoTop=function(options){var defaults={text:'To Top',min:200,inDelay:600,outDelay:400,containerID:'toTop',containerHoverID:'toTopHover',scrollSpeed:1200,easingType:'linear'},settings=$.extend(defaults,options),containerIDhash='#'+settings.containerID,containerHoverIDHash='#'+settings.containerHoverID;$('body').append('<a href="#" id="'+settings.containerID+'">'+settings.text+'</a>');$(containerIDhash).hide().on('click.UItoTop',function(){$('html, body').animate({scrollTop:0},settings.scrollSpeed,settings.easingType);$('#'+settings.containerHoverID,this).stop().animate({'opacity':0},settings.inDelay,settings.easingType);return false;}).prepend('<span id="'+settings.containerHoverID+'"></span>').hover(function(){$(containerHoverIDHash,this).stop().animate({'opacity':1},600,'linear');},function(){$(containerHoverIDHash,this).stop().animate({'opacity':0},700,'linear');});$(window).scroll(function(){var sd=$(window).scrollTop();if(typeof document.body.style.maxHeight==="undefined"){$(containerIDhash).css({'position':'absolute','top':sd+$(window).height()-50});}
+//if(sd>settings.min)
+//$(containerIDhash).fadeIn(settings.inDelay);else
+//$(containerIDhash).fadeOut(settings.Outdelay);});};})(jQuery);
+//			 function pageScroll(){
+//      //把内容滚动指定的像素数（第一个参数向右滚动的像素数，第二个参数向下滚动的像素数）
+//              window.scrollBy(0,10);
+//      //延时递归调用，模拟滚动向上效果
+//              scrolldelay = setTimeout('pageScroll()',10);
+//      //获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，
+//      //否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和值
+//      //可以得到网页的真正的scrollTop值
+//              var sTop=document.documentElement.scrollTop+document.body.scrollTop;
+//      //判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）
+//              if(sTop==0) clearTimeout(scrolldelay);
+//           }
+		</script>
+	</head>
+	<body>
+		<div id="all">
+			<div id="top">
+				<img src="img/logo.png"/ class="logo">
+				<h1 class="r">我 的 世 界</h1>
+				<!--<div class="search re">
+		    		<form action="" method="post">
+		    			<a href="www.baidu.com" class="searchl"></a>
+		    		    <input class="searchr" type="text" value="请输入搜索内容">
+		    	    </form>
+		    	</div>-->
+			</div>
+		    <div id="navigation">
+		    	<ul class="guide">
+		    		<li class="l" style="background: url(img/menu.jpg) center;
+		    			font-size: x-large;width: 160px;">
+		    			<a href="index.html" class="ma" target="_blank">Do myself</a>
+		    		</li>
+		    		<li class="l ma" style="width: 80px;">
+		    			自信</li>
+		    		<li class="l lir">
+		    			<a href="index.html" class="ma bl" target="_blank">学习生涯</a>
+		    		</li>
+		    		<li class="l lir">
+		    			<a href="社团活动.html" class="ma bl" target="_blank">社团活动</a>
+		    		</li>
+		    		<li class="l lir">
+		    			<a href="志愿者.html" class="ma bl" target="_blank">志&nbsp;愿&nbsp;者</a>
+		    		</li>
+		    		<li class="l lir" style="border-right-style: solid ;">
+		    			<a href="炎黄跑团.html" class="ma bl" target="_blank">炎黄跑团</a>
+		    		</li>
+		    	</ul>
+		    </div>
+		    <div id="banner">
+		    	<div id="banner1">
+		    		<div class="pic1 l" >
+		    		<img src="img/banner-pic1.png"/> 
+		    	    </div>
+		    	    <div class="art r">
+		    	    	<h1 style="font-family: 楷体 ;font-size: 45px;">
+		    	    		个人简介</h1>
+		    	    	<hr/>
+		    	    	<p>
+		    	    	姓名：王鹏飞<br />性别：男<br />民族：汉族<br />
+		    	    	性格：活泼开朗、热情大方<br />
+		    	    	爱好：羽毛球、跑步、游泳、健身<br />家乡：湖北省荆州市
+		    	    	<br />居住地：广东省广州市<br />学校：郑州航空工业管理学院
+		    	    	<br />专业：计算机学院网络工程
+		    	    	</p>
+		    	    </div>
+		    	    <div>
+		    		
+		    	    </div>
+		    	</div>
+		    </div>
+		    
+		    <div id="main">
+		    	<div class="container">
+					    <div class="wrap" style="left:-1000px;">
+					      <img src="img/university3.jpg" alt="">
+					      <img src="img/high_schools.jpg" alt="">
+					      <img src="img/university.jpeg" alt="">
+					      <img src="img/high_school.jpg" alt="">
+					      <img src="img/university2.jpg" alt="">
+					      <img src="img/middle_school2.jpg" alt="">
+					      <img src="img/middle_school.jpg" alt="">
+					    </div>
+					    <div class="buttons">
+					      <span class="on">1</span>
+					      <span>2</span>
+					      <span>3</span>
+					      <span>4</span>
+					      <span>5</span>
+					    </div>
+					    <a href="javascript:;" class="arrow_left"><</a>
+					    <a href="javascript:;" rel="external nofollow" class="arrow_right">></a>
+					    
+			</div>
+		    	<script src="js/lunbo.js" type="text/javascript" charset="utf-8"></script>
+		    	<h1 class="re" style="top:30px;height: 50px;
+		    		text-align: right; right: 150px;">
+		    		小学——番禺附小</h1>
+		    	<div class="primary_school">
+		    		<img src="img/primary_school.png"/ class="re">	    		
+		    		<p class="re r">广州市番禺区华师附中番禺小学创办于2003年8月，
+		    			 是一所由著名房地产企业——合生创展（集团）有限公司投资，
+		    			 以国家示范学校——华南师范大学附属中学现代教育理念进行管理
+		    			 的新型民办小学。学校坐落于风光旖旎的珠江南岸，环境优雅，功能齐全，
+		    			 教学区、生活区、运动区各有所属。合生公司完成了学校基本建设后，
+		    			 逐年投入资金依次完善了电脑室、音乐室、美术室、体育馆、
+		    			 多功能电教室等场室，按国家标准配备了图书、教学仪器。
+		    			 校园中，绿树成荫，花香满园。一楼的经典长廊，二楼的礼仪花园，
+		    			 三楼的科技天地，四楼的艺术殿堂，无一不洋溢着教书育人的气息.</p>
+		    	</div>
+		    	<h1 class="hl re">中学——华附番中</h1>
+		    	<div class="middle_school">
+		    		<p class="re l">广州市华师附中番禺学校（以下简称“华附番禺学校”）创办于2001年，
+		    			是华南师范大学附属中学与合生创展集团有限公司合作建立的民办学校，
+		    			是华南师范大学附属中学开办的第一所分校。
+		    			华附番禺学校是一所具有完中建制的全日制寄宿学校，
+		    			2001年秋季开始招收初中一年级学生，
+		    			2004年秋季开始招收高中一年级学生。
+		    			华附番禺学校现有初一至初三年级各12个教学班，1500余名学生；
+		    			高中三个年级14个班，近500名学生，全校共有学生两千人，
+		    			教职工近240人。华附番禺学校建筑面积6万平方米，教育教学、生活、
+		    			文体设施一流。教学区内，全部教室都配有多媒体教学一体机，
+		    			师生可在课堂上随时享用丰富的网络资源。</p>
+		    		<img src="img/middle_school1c.png"/ class="re r">
+		    	</div>
+		    	<h1 class="hr re">高中——仲元中学</h1>
+		    	<div class="high_school">
+		    		<img src="img/high_school1c.png"/class="re ">
+		    		<p class="re r">广东仲元中学简称仲元中学，是一所公立全日制普通高级中学，
+		    			学校是广东省一级学校，广东省首批国家级示范性高中。
+		    			学校始建于1934年春，是胡汉民、刘芦隐
+		    			、任中敏等诸位先贤为纪念孙中山先生的得力助手、
+		    			著名民主革命家邓仲元先生而筹办创立的一所纪念性学校，
+		    			创立初期为私立高中；1942年，学校更名为“广东省立仲元中学”，
+		    			文革时期学校曾易名“市桥一中”、“番禺县第一中学”；
+		    			1980年，复名为广东仲元中学；1998年，私立仲元中学改为全日制高中。 
+		    			据2018年3月学校官网显示，学校占地面积约70050平方米，
+		    			拥有60个教学班，在校学生约3080人，教师共252人。</p>
+		    	</div>
+		    	<h1 class="hl re">大学——郑州航院</h1>
+		    	<div class="university">
+		    		<p class="re l">郑州航空工业管理学院是河南省与中国民用航空局共建高校，始建于1949年，
+		    			1984年升格为本科，是原航空工业部所属的6所本科院校之一，
+		    			1999年办学体制转变为中央与地方共建、日常管理以河南省为主
+		    			，2013年获批硕士学位授予权单位。学
+		    			校秉承“严谨、求实、开拓、进取”之校训，
+		    			坚持“德育首位，教学中心，质量至上，育人为本”的办学理念，
+		    			树立“协同办学、协同育人、协同创新”的发展理念，
+		    			坚持“立足航空产业，服务区域经济”的服务面向，
+		    			形成了“航空为本，管工结合”的办学特色，
+		    			确立了在航空工业管理和技术应用研究领域中的较强优势。</p>
+		    		<img src="img/university1c.png"class="re r">
+		    	</div>
+		    </div>
+		    <div id="foot">
+		    	<div class="foot_menu re">
+		    		<ul class="ab">
+		    			<li class="l"><a href="index.html">学习生涯</a></li>
+		    			<li class="l"><a href="社团活动.html">社团活动</a></li>
+		    			<li class="l"><a href="志愿者.html">
+		    				志&nbsp;&nbsp;愿&nbsp;&nbsp;者</a></li>
+		    			<li class="l"
+		    				style="border-right-style:solid ;
+				            border-right-width: 2px;
+				            border-color: aliceblue;">
+				            <a href="炎黄跑团.html">炎黄跑团</a>
+		    			</li>
+		    		</ul>
+		    		<p class="ab">分享到：</p>
+		    		<a href="#"><div class="share ab"></div></a>
+		    	</div>
+		    	<div class="copyright">
+		    		<p>
+		    			联系电话：13326468297&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    			邮箱：w1p2f3@126.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    			单位：郑州航空工业管理学院<br />
+		    			copyright © 2016-2020 WPF 版权所有，翻录必究
+		    		</p>
+		    	</div>
+		    	<div class="go_top">
+		    		<a href="#all" class="scroll">
+		    			<img src="img/foot_top.png"/>
+		    		</a>
+		    	</div>
+		    </div>
+		    <!--<a href="#to-top" id="toTop" style="display: block;"> 
+		    	<span id="toTopHover" style="opacity: 1;"> </span>
+		    </a>-->
+		    <!--<div id="go_top">
+		    	<img src="img/to-top.png"/>
+		    </div>-->
+		</div>
+		<!--<a href="" id="gotop">冲上去</a>-->
+	</body>
+</html>

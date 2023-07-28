@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>
+			steven小屋
+		</title>
+		<style type="text/css">
+			*{
+				margin: 0px;padding: 0px;
+			}
+			.mains,.mains::before,.mains::after{
+				box-sizing: border-box;
+			}
+			body{
+				margin: 0px;padding: 0px;
+			}
+			.r{float: right;}
+			.l{float: left;}
+			.bl{display: block;}
+			.ab{position: absolute;}
+			.re{position: relative;}
+			ul{list-style: none;}
+			a{text-decoration: none;
+			color: black;}
+			@font-face {
+				font-family: "z1";
+				src: url("font/f.ttf");
+			}@font-face {
+				font-family: "z2";
+				src: url("font/e.otf");
+			}
+			@keyframes clipMe {
+				0%,100% {
+				 	clip: rect(0px, 1100.0px, 10px, 0px);
+				}
+				25% {
+				    clip: rect(0px, 10px, 1100.0px, 0px);
+				}
+				50% {
+					clip: rect(1090.0px, 1100.0px, 1100.0px, 0px);
+				}
+				75% {
+				    clip: rect(0px, 1100.0px, 1100.0px, 1090.0px);
+				}
+			}
+			#all{
+				width: 100%;
+				height: auto;
+				background: rgb(13,36,54);
+			}
+			#top{
+				width: 1200px;
+				height: 180px;
+				margin: 0px auto;
+				background: url(img/top-bg.jpg) no-repeat;
+				background-position: -110px 0px;
+			}
+			#top h1{
+				font: "arial narrow";
+				margin: 30px 60px 0px 0px;
+				font-size: 45px;
+				color: azure;
+			}
+			.logo{
+				margin: 15px 0px 0px 60px;
+			}
+			/*.search{
+				height: 30px;width: 155px;
+				top: 71px;left: 100px;
+			}
+			.searchr{
+				height: 26px;width: 120px;
+				background: #F1F1F1;
+			}
+			.searchl{
+				height: 30px;width: 25px;
+				background: url(img/wpfsearch.jpg) no-repeat center;
+				background-size: 100% 100%;
+				border-right: 2px;
+				display: block;
+				float: left;
+			}*/
+			#navigation{
+				width: 1000px;
+				height: 40px;
+				margin: 0px auto;
+				background: rgb(31,136,217);
+				border-bottom: 2px solid #F0F8FF;
+			}
+			#navigation li{
+				font-family: z2;
+				font-size: 21px;
+			}
+			.guide{
+				width: 900px;
+				height: 40px;
+			}
+			.guide li{
+				width: 150px;
+				text-align: center;
+				line-height: 40px;
+				border-color: rgb(180,180,180);
+			}
+			.lir{
+				border-left-style: solid;
+			}
+			.lir:hover{
+				background: url(img/menu.jpg) center;
+			}
+			.ma{
+				color: white;
+			}
+			#banner{
+				width: 1000px;
+				height: 300px;
+				margin: 0px auto;
+				background: url(img/banner_wrapper.png);
+			}
+			#banner1{
+				height: 250px;
+				width: 100%;
+				position: relative;
+				top: 25px;
+			}
+			#banner .pic1{
+				width: 300px;
+				height: 200px;
+				position: absolute;
+				top: 20px;
+				left: 100px;
+				padding: 10px;
+				border-color: white;
+				border-style: solid;
+			}
+			.art{
+				color: white;
+				position: absolute;
+				top: 30px;
+				right: 100px;
+				width: 360px;height: 200px;
+				text-indent: 2em;
+			}
+			#main{
+				width: 1000px;
+				height: 1100px;
+				margin: 0px auto;
+				background: rgb(209,209,209);
+				position: relative;
+			}
+			.mains, .mains::before, .mains::after{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+            .mains {
+                width: 1000px;height: 1000px;
+                top: 5px;
+                margin: auto;
+                background: url("img/Button-White-Large.png") no-repeat 50%/70% rgba(0, 0, 0, 0.1);
+                color: #69ca62;
+                box-shadow: inset 0 0 0 1px rgba(105, 202, 98, 0.5);
+            }
+            .mains::before, .mains::after {
+                content: '';
+                z-index: 1;
+                margin: -2%;
+                box-shadow: inset 0 0 0 2px;
+                animation: clipMe 8s linear infinite;
+            }
+            .mains::before {
+                animation-delay: -4s;
+            }
+            .mains:hover::after, .mains:hover::before {
+                background-color: rgba(0, 250, 154, 0.3);
+            }
+            #main .pic1{
+            	left: 20px;
+            }	
+            #main .pic2{
+            	bottom: 20px;
+            }
+            #main .pic3{
+            	right: 430px;bottom: 20px;
+            }
+            #main .pic4{
+            	top: 320px;
+            }
+            #main .pic5{
+            	right: 20px;top: 320px;
+            }
+            #main .pic6{
+            	right: 20px;bottom: 20px;
+            }
+            #main .pic7{
+            	right: 20px;
+            }
+            #main .pic8{
+            	left: 270px;top: 20px;
+            }
+            #main .p1{
+            	font-size: 35px;
+            	width: 40px;
+            	left: 190px;top: 20px;
+            }
+            #main .p2{
+            	font-size: 40px;
+            	width: 40px;
+            	right: 500px;top: 20px;
+            }
+            #main .p3{
+            	font-size: 40px;
+            	width: 40px;
+            	right: 450px;
+            }
+            #main .p4{
+            	font-size: 35px;
+            	width: 40px;
+            	left: 420px;top: 320px;
+            }
+            #main .p5{
+            	font-size: 30px;
+            	width: 360px;
+            	right: 30px;bottom: 280px;
+            	text-align: center;
+            }
+            #main .p6{
+            	font-size: 35px;
+            	width: 150px;
+            	left: 420px;bottom: 370px;
+            }
+            #main .p7{
+            	font-size: 35px;
+            	width: 275px;
+            	left: 30px;bottom: 320px;
+            }
+            #main .p8{
+            	font-size: 40px;
+            	width: 100px;
+            	left: 280px;top: 170px;
+            }
+            #main p{
+            	font-family: 楷体;
+            	color: cornflowerblue;
+            }
+			#foot{
+				width: 100%;
+				height: 120px;
+				margin: 0px auto;
+				background: url(img/foot_wrapper.png) repeat-x;
+				font-size: small;
+			}
+			.foot_menu{
+				width: 1000px;
+				height: 50px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			.foot_menu ul{
+				height: 30px;
+				line-height: 30px;
+				margin: 0 auto;
+				padding-top: 10px;
+				left: 150px;
+			}
+			.foot_menu li{
+				width: 100px;
+				border-left-style:solid ;
+				border-left-width: 2px;
+				border-color: aliceblue;
+			}
+            .foot_menu a:hover{
+	            color: aliceblue;
+			}
+			.share{
+				top: 5px;
+				right: 100px;
+				width: 220px;
+				height: 40px;
+				width: 220px;
+				background: url(img/share.png) top;
+			}
+			.share:hover{
+				background: url(img/share.png);
+				background-position: 0px 47px;
+			}
+			.foot_menu p{
+				right: 320px;
+				top: 15.6px;
+				margin: 0 auto;			
+			}
+			.go_top{
+				text-align: center;
+				adding-top: 10px;
+			}
+			.copyright{
+				width: 1000px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			#go_top{
+				position: fixed;
+				right: 50px;
+				bottom: 100px;
+			}
+			/*#toTop {
+				display: none;
+				position: fixed;
+				bottom: 14px;
+				right: 3%;
+				overflow: hidden;
+				width: 40px;
+				height: 40px;
+				border: none;
+				text-indent: 100%;
+				background: url(img/to-top.png) no-repeat 0px 0px;
+            }
+            #toTopHover {
+            	width: 40px;
+            	height: 40px;
+            	display: block;
+            	overflow: hidden;
+            	float: right;
+            	opacity: 0;
+            	-moz-opacity: 0;
+            	ilter: alpha(opacity=0);
+            }*/
+		</style>
+		<!--<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+		<script type="text/javascript">
+			 $("#go_top").click(function () {
+        var speed=5000;    //设置滑动的速度
+        $('body,html').animate({ scrollTop: 0 }, speed);
+        return false;
+    });-->
+		</script>
+		
+		<script>
+//			(function($){$.fn.UItoTop=function(options){var defaults={text:'To Top',min:200,inDelay:600,outDelay:400,containerID:'toTop',containerHoverID:'toTopHover',scrollSpeed:1200,easingType:'linear'},settings=$.extend(defaults,options),containerIDhash='#'+settings.containerID,containerHoverIDHash='#'+settings.containerHoverID;$('body').append('<a href="#" id="'+settings.containerID+'">'+settings.text+'</a>');$(containerIDhash).hide().on('click.UItoTop',function(){$('html, body').animate({scrollTop:0},settings.scrollSpeed,settings.easingType);$('#'+settings.containerHoverID,this).stop().animate({'opacity':0},settings.inDelay,settings.easingType);return false;}).prepend('<span id="'+settings.containerHoverID+'"></span>').hover(function(){$(containerHoverIDHash,this).stop().animate({'opacity':1},600,'linear');},function(){$(containerHoverIDHash,this).stop().animate({'opacity':0},700,'linear');});$(window).scroll(function(){var sd=$(window).scrollTop();if(typeof document.body.style.maxHeight==="undefined"){$(containerIDhash).css({'position':'absolute','top':sd+$(window).height()-50});}
+//if(sd>settings.min)
+//$(containerIDhash).fadeIn(settings.inDelay);else
+//$(containerIDhash).fadeOut(settings.Outdelay);});};})(jQuery);
+//			 function pageScroll(){
+//      //把内容滚动指定的像素数（第一个参数向右滚动的像素数，第二个参数向下滚动的像素数）
+//              window.scrollBy(0,10);
+//      //延时递归调用，模拟滚动向上效果
+//              scrolldelay = setTimeout('pageScroll()',10);
+//      //获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，
+//      //否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和值
+//      //可以得到网页的真正的scrollTop值
+//              var sTop=document.documentElement.scrollTop+document.body.scrollTop;
+//      //判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）
+//              if(sTop==0) clearTimeout(scrolldelay);
+//           }
+		</script>
+	</head>
+	<body>
+		<div id="all">
+			<div id="top">
+				<img src="img/logo.png"/ class="logo">
+				<h1 class="r">我 的 世 界</h1>
+				<!--<div class="search re">
+		    		<form action="" method="post">
+		    			<a href="www.baidu.com" class="searchl"></a>
+		    		    <input class="searchr" type="text" value="请输入搜索内容">
+		    	    </form>
+		    	</div>-->
+			</div>
+		    <div id="navigation">
+		    	<ul class="guide">
+		    		<li class="l" style="background: url(img/menu.jpg) center;
+		    			font-size: x-large;width: 160px;">
+		    			<a href="index.html" class="ma" target="_blank">Do myself</a>
+		    		</li>
+		    		<li class="l ma" style="width: 80px;">
+		    			坚持</li>
+		    		<li class="l lir">
+		    			<a href="index.html" class="ma bl" target="_blank">学习生涯</a>
+		    		</li>
+		    		<li class="l lir">
+		    			<a href="社团活动.html" class="ma bl" target="_blank">社团活动</a>
+		    		</li>
+		    		<li class="l lir">
+		    			<a href="志愿者.html" class="ma bl" target="_blank">志&nbsp;愿&nbsp;者</a>
+		    		</li>
+		    		<li class="l lir" style="border-right-style: solid ;">
+		    			<a href="炎黄跑团.html" class="ma bl" target="_blank">炎黄跑团</a>
+		    		</li>
+		    	</ul>
+		    </div>
+		    <div id="banner">
+		    	<div id="banner1">
+		    		<div class="pic1 l" >
+		    		<img src="img/banner-pic4.png"/> 
+		    	    </div>
+		    	    <div class="art r">
+		    	    	<h1 style="font-family: 楷体 ;font-size: 45px;">
+		    	    		炎黄兄弟跑团</h1>
+		    	    	<hr/>
+		    	    	<p style="font-size: 16px;text-indent: 33px;
+		    	    		padding-top: 15px;">这是一群有活力，有激情的大学生。因为热爱运动而走到了一起.
+		    	    		从一开始的三五人到现在的上百人，我们的队伍在不断的壮大。
+		    	    		从跑下5公里、10公里到半程马拉松、全程马拉松安全完赛，
+		    	    	           我们也在不断突破。日常训练，比赛的同时，我们也在
+		    	    	           享受生活，感受这个大家庭的温暖。</p>
+		    	    </div>
+		    	    <div>
+		    		
+		    	    </div>
+		    	</div>
+		    </div>
+		    <div id="main">
+		    	<div class="mains">
+		    		<img src="img/run-pic1.png" alt="" / class="ab pic1">
+		    		<img src="img/run-pic2.png" alt="" / class="ab pic2">
+		    		<img src="img/run-pic3.png" alt="" / class="ab pic3">
+		    		<img src="img/run-pic4.png" alt="" / class="ab pic4">
+		    		<img src="img/run-pic5.png" alt="" / class="ab pic5">
+		    		<img src="img/run-pic6.png" alt="" / class="ab pic6">
+		    		<img src="img/run-pic7.png" alt="" / class="ab pic7">
+		    		<img src="img/run-pic8.png" alt="" / class="ab pic8">
+		    		<p class="ab p1">
+		    			第一次跑完全马
+		    		</p>
+		    		<p class="ab p2">太阳还未升起</p>
+		    		<p class="ab p3">我们已准备出发	</p>
+		    		<p class="ab p4">第一次当兔子</p>
+		    		<p class="ab p5">每一块奖牌，每一件参赛服<br />都是青春最美好的回忆</p>
+		    		<p class="ab p6">兄弟寄语</p>
+		    		<p class="ab p7">跑步，贵在坚持</p>
+		    		<p class="ab p8">跑 马<br />态 度</p>
+		    	</div>
+		    </div>
+		    <div id="foot">
+		    	<div class="foot_menu re">
+		    		<ul class="ab">
+		    			<li class="l"><a href="index.html">学习生涯</a></li>
+		    			<li class="l"><a href="社团活动.html">社团活动</a></li>
+		    			<li class="l"><a href="志愿者.html">
+		    				志&nbsp;&nbsp;愿&nbsp;&nbsp;者</a></li>
+		    			<li class="l"
+		    				style="border-right-style:solid ;
+				            border-right-width: 2px;
+				            border-color: aliceblue;">
+				            <a href="炎黄跑团.html">炎黄跑团</a>
+		    			</li>
+		    		</ul>
+		    		<p class="ab">分享到：</p>
+		    		<a href="#"><div class="share ab"></div></a>
+		    	</div>
+		    	<div class="copyright">
+		    		<p>
+		    			联系电话：13326468297&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    			邮箱：w1p2f3@126.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    			单位：郑州航空工业管理学院<br />
+		    			copyright © 2016-2020 WPF 版权所有，翻录必究
+		    		</p>
+		    	</div>
+		    	<div class="go_top">
+		    		<a href="#all" class="scroll">
+		    			<img src="img/foot_top.png"/>
+		    		</a>
+		    	</div>
+		    </div>
+		    <!--<a href="#to-top" id="toTop" style="display: block;"> 
+		    	<span id="toTopHover" style="opacity: 1;"> </span>
+		    </a>-->
+		    <!--<div id="go_top">
+		    	<img src="img/to-top.png"/>
+		    </div>-->
+		</div>
+		<!--<a href="" id="gotop">冲上去</a>-->
+	</body>
+</html>

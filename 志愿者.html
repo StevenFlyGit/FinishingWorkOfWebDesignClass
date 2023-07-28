@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>
+			steven小屋
+		</title>
+		<style type="text/css">
+			*{
+				margin: 0px;padding: 0px;
+			}
+			body{
+				margin: 0px;padding: 0px;
+			}
+			.r{float: right;}
+			.l{float: left;}
+			.bl{display: block;}
+			.ab{position: absolute;}
+			.re{position: relative;}
+			ul{list-style: none;}
+			a{text-decoration: none;
+			color: black;}
+			@font-face {
+				font-family: "z1";
+				src: url("font/f.ttf");
+			}
+			@font-face {
+				font-family: "z2";
+				src: url("font/e.otf");
+			}
+			@keyframes masked-animation {
+			    0% {
+			    	background-position: 0  0;
+			    }
+			    100% {
+			    	background-position: -100%  0;
+                }
+            }
+			#all{
+				width: 100%;
+				height: auto;
+				background: rgb(13,36,54);
+			}
+			#top{
+				width: 1200px;
+				height: 180px;
+				margin: 0px auto;
+				background: url(img/top-bg.jpg) no-repeat;
+				background-position: -110px 0px;
+			}
+			#top h1{
+				font: "arial narrow";
+				margin: 30px 60px 0px 0px;
+				font-size: 45px;
+				color: azure;
+			}
+			.logo{
+				margin: 15px 0px 0px 60px;
+			}
+			/*.search{
+				height: 30px;width: 155px;
+				top: 71px;left: 100px;
+			}
+			.searchr{
+				height: 26px;width: 120px;
+				background: #F1F1F1;
+			}
+			.searchl{
+				height: 30px;width: 25px;
+				background: url(img/wpfsearch.jpg) no-repeat center;
+				background-size: 100% 100%;
+				border-right: 2px;
+				display: block;
+				float: left;
+			}*/
+			#navigation{
+				width: 1000px;
+				height: 40px;
+				margin: 0px auto;
+				background: rgb(31,136,217);
+				border-bottom: 2px solid #F0F8FF;
+			}
+			#navigation li{
+				font-family: z2;
+				font-size: 21px;
+			}
+			.guide{
+				width: 900px;
+				height: 40px;
+			}
+			.guide li{
+				width: 150px;
+				text-align: center;
+				line-height: 40px;
+				border-color: rgb(180,180,180);
+			}
+			.lir{
+				border-left-style: solid;
+			}
+			.lir:hover{
+				background: url(img/menu.jpg) center;
+			}
+			.ma{
+				color: white;
+			}
+			#banner{
+				width: 1000px;
+				height: 300px;
+				margin: 0px auto;
+				background: url(img/banner_wrapper.png);
+			}
+			#banner1{
+				height: 250px;
+				width: 100%;
+				position: relative;
+				top: 25px;
+			}
+			#banner .pic1{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				top: 10px;
+				left: 140px;
+				padding: 10px;
+				border-radius: 50%;
+				border-color: white;
+				border-style: solid;
+			}
+			.art{
+				width: 410px;
+				color: white;
+				position: absolute;
+				top: 20px;
+				right: 130px;
+			}
+			#main{
+				width: 1000px;
+				height: 2400px;
+				margin: 0px auto;
+				background: rgb(209,209,209);
+			}
+			#mains{
+				width: 1000px;height: 2400px;
+				position: absolute;
+			}
+			.content_top{
+				width: 1050px; height: 49px; 
+	            padding-top: 20px;
+	            background: url(img/tooplate_gototop_bg.png);
+	            background-size: 1050px 79px;
+	            right: 25px;
+			}
+			.content_top p{
+				text-align: center;
+			    font-size: 22px;
+			    font-family: 楷体;
+			    color: aliceblue;
+			}
+			.content_title{
+				width: 1000px; 
+	            height: 35px; 
+	            padding: 10px 0px 15px 0px; 
+	            background: url(img/tooplate_ct.png);
+	            background-size: 1000px 60px;
+			}
+			.content_title h1{
+				width: 900px;
+				margin: 0 auto;
+				font-family: z1;
+			}
+			.daily{
+				height: 700px;
+			}
+			.daily .content1{
+				height: 460px;width: 300px;
+                background-color: white;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                margin: 25px 5px 15px 15px;padding: 5px;
+			}
+			.daily .content2{
+				height: 460px;width: 300px;
+                background-color: white;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                margin: 25px 15px 25px 5px;padding: 5px;
+			}
+			.daily .content3{
+				height: 460px;width: 300px;
+                background-color: white;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                margin: 25px 15px;padding: 5px;
+			}
+			.daily .container{
+				text-indent: 2em;
+				text-align: center;
+                padding: 10px 10px;
+			}
+			.air_show{
+				width: 1000px;
+			}
+			.air_show .content{
+				width: 1000px;
+			}
+			.air_show .p1{
+				background-image: -webkit-linear-gradient(left,blue,#66ffff 10%,#cc00ff 20%,#CC00CC 30%, #CCCCFF 40%, #00FFFF 50%,#CCCCFF 60%,#CC00CC 70%,#CC00FF 80%,#66FFFF 90%,blue 100%);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                -webkit-background-size: 200% 100%; 
+                -webkit-animation: masked-animation 4s linear infinite;
+                width: 400px;
+                text-indent: 2em;
+                right: 30px;top:50px;
+                font-family: "微软雅黑";
+			}
+			.air_show .pic1{
+				margin: 20px 0px 0px 30px;
+				border-radius: 50%;
+				box-shadow: 8px 4px 10px #000;
+			}
+			.air_show .p2{
+				width: 400px;
+				right: 30px;top: 170px;
+				text-indent: 2em;
+			}
+			.air_show .pic2, .air_show .pic3, .air_show .pic4{
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+			.air_show .pic2{
+				top: 380px;left:30px;
+			}
+			.air_show .pic3{
+				top: 380px;left:360px;
+			}
+			.air_show .pic4{
+				top: 380px;right:30px;
+			}
+			.dragen_boat .pic1{
+				margin: 20px 0px 0px 470px;
+				border-radius: 50%;
+				box-shadow: 8px 4px 10px #000;
+			}
+			.dragen_boat .p1{
+				background-image: -webkit-linear-gradient(left,rgb(71,236,131),rgb(66,253,49) 10%,rgb(104,253,58) 20%,rgb(33,254,65) 30%, rgb(196,254,80) 40%, rgb(233,255,89) 50%,rgb(216,252,96) 60%,rgb(186,249,101) 70%,rgb(134,243,110) 80%,rgb(96,239,110) 90%,rgb(71,236,131) 100%);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                -webkit-background-size: 200% 100%; 
+                -webkit-animation: masked-animation 4s linear infinite;
+                width: 400px;
+                text-indent: 2em;
+                left: 30px;top:50px;
+                font-family: "微软雅黑";
+			}
+			.dragen_boat .p2{
+				width: 400px;
+				left: 30px;top: 170px;
+				text-indent: 2em;
+			}
+			.dragen_boat .pic2{
+				margin: 60px 30px 0px 30px ;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+			#foot{
+				width: 100%;
+				height: 120px;
+				margin: 0px auto;
+				background: url(img/foot_wrapper.png) repeat-x;
+				font-size: small;
+			}
+			.foot_menu{
+				width: 1000px;
+				height: 50px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			.foot_menu ul{
+				height: 30px;
+				line-height: 30px;
+				margin: 0 auto;
+				padding-top: 10px;
+				left: 150px;
+			}
+			.foot_menu li{
+				width: 100px;
+				border-left-style:solid ;
+				border-left-width: 2px;
+				border-color: aliceblue;
+			}
+            .foot_menu a:hover{
+	            color: aliceblue;
+			}
+			.share{
+				top: 5px;
+				right: 100px;
+				width: 220px;
+				height: 40px;
+				width: 220px;
+				background: url(img/share.png) top;
+			}
+			.share:hover{
+				background: url(img/share.png);
+				background-position: 0px 47px;
+			}
+			.foot_menu p{
+				right: 320px;
+				top: 15.6px;
+				margin: 0 auto;			
+			}
+			.go_top{
+				text-align: center;
+				adding-top: 10px;
+			}
+			.copyright{
+				width: 1000px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			#go_top{
+				position: fixed;
+				right: 50px;
+				bottom: 100px;
+			}
+			/*#toTop {
+				display: none;
+				position: fixed;
+				bottom: 14px;
+				right: 3%;
+				overflow: hidden;
+				width: 40px;
+				height: 40px;
+				border: none;
+				text-indent: 100%;
+				background: url(img/to-top.png) no-repeat 0px 0px;
+            }
+            #toTopHover {
+            	width: 40px;
+            	height: 40px;
+            	display: block;
+            	overflow: hidden;
+            	float: right;
+            	opacity: 0;
+            	-moz-opacity: 0;
+            	ilter: alpha(opacity=0);
+            }*/
+		</style>
+		<!--<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+		<script type="text/javascript">
+			 $("#go_top").click(function () {
+        var speed=5000;    //设置滑动的速度
+        $('body,html').animate({ scrollTop: 0 }, speed);
+        return false;
+    });-->
+		</script>
+		
+		<script>
+//			(function($){$.fn.UItoTop=function(options){var defaults={text:'To Top',min:200,inDelay:600,outDelay:400,containerID:'toTop',containerHoverID:'toTopHover',scrollSpeed:1200,easingType:'linear'},settings=$.extend(defaults,options),containerIDhash='#'+settings.containerID,containerHoverIDHash='#'+settings.containerHoverID;$('body').append('<a href="#" id="'+settings.containerID+'">'+settings.text+'</a>');$(containerIDhash).hide().on('click.UItoTop',function(){$('html, body').animate({scrollTop:0},settings.scrollSpeed,settings.easingType);$('#'+settings.containerHoverID,this).stop().animate({'opacity':0},settings.inDelay,settings.easingType);return false;}).prepend('<span id="'+settings.containerHoverID+'"></span>').hover(function(){$(containerHoverIDHash,this).stop().animate({'opacity':1},600,'linear');},function(){$(containerHoverIDHash,this).stop().animate({'opacity':0},700,'linear');});$(window).scroll(function(){var sd=$(window).scrollTop();if(typeof document.body.style.maxHeight==="undefined"){$(containerIDhash).css({'position':'absolute','top':sd+$(window).height()-50});}
+//if(sd>settings.min)
+//$(containerIDhash).fadeIn(settings.inDelay);else
+//$(containerIDhash).fadeOut(settings.Outdelay);});};})(jQuery);
+//			 function pageScroll(){
+//      //把内容滚动指定的像素数（第一个参数向右滚动的像素数，第二个参数向下滚动的像素数）
+//              window.scrollBy(0,10);
+//      //延时递归调用，模拟滚动向上效果
+//              scrolldelay = setTimeout('pageScroll()',10);
+//      //获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，
+//      //否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和值
+//      //可以得到网页的真正的scrollTop值
+//              var sTop=document.documentElement.scrollTop+document.body.scrollTop;
+//      //判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）
+//              if(sTop==0) clearTimeout(scrolldelay);
+//           }
+		</script>
+	</head>
+	<body>
+		<div id="all">
+			<div id="top">
+				<img src="img/logo.png"/ class="logo">
+				<h1 class="r">我 的 世 界</h1>
+				<!--<div class="search re">
+		    		<form action="" method="post">
+		    			<a href="www.baidu.com" class="searchl"></a>
+		    		    <input class="searchr" type="text" value="请输入搜索内容">
+		    	    </form>
+		    	</div>-->
+			</div>
+		    <div id="navigation">
+		    	<ul class="guide">
+		    		<li class="l" style="background: url(img/menu.jpg) center;
+		    			font-size: x-large;width: 160px;">
+		    			<a href="index.html" class="ma" target="_blank">Do myself</a>
+		    		</li>
+		    		<li class="l ma" style="width: 80px;">
+		    			善良
+		    		</li>
+		    		<li class="l lir">
+		    			<a href="index.html" class="ma bl" target="_blank">学习生涯</a>
+		    		</li>
+		    		<li class="l lir">
+		    			<a href="社团活动.html" class="ma bl" target="_blank">社团活动</a>
+		    		</li>
+		    		<li class="l lir">
+		    			<a href="志愿者.html" class="ma bl" target="_blank">志&nbsp;愿&nbsp;者</a>
+		    		</li>
+		    		<li class="l lir" style="border-right-style: solid ;">
+		    			<a href="炎黄跑团.html" class="ma bl" target="_blank">炎黄跑团</a>
+		    		</li>
+		    	</ul>
+		    </div>
+		    <div id="banner">
+		    	<div id="banner1">
+		    		<div class="pic1 l" >
+		    		<img src="img/banner-pic3.png"/> 
+		    	    </div>
+		    	    <div class="art r">
+		    	    	<h1 style="font-family: 楷体 ;font-size: 35px;">
+		    	    		郑州航院青年志愿者协会</h1>
+		    	    	<hr/>
+		    	    	<p style="font-size: 16px;text-indent: 33px;
+		    	    		padding-top: 15px;">郑州航空工业管理学院青年志愿者协会成立于2010年3月12日，
+		    	    		是隶属于共青团郑州航院委员会的非盈利性学生公益组织。
+		    	    		郑州航院青年志愿者协会自成立以来，
+		    	    		始终秉承“奉献爱心，弘扬新风，帮助他人，完善自我”
+		    	    		的志愿服务精神，立足校园，服务社会。
+		    	    		在新时代弘扬雷锋精神的社会背景下，在校领导和社会各界的关怀帮助下，
+		    	    		在一批批志愿者的共同努力下，协会不断发展壮大。</p>
+		    	    </div>
+		    	    <div>
+		    		
+		    	    </div>
+		    	</div>
+		    </div>
+		    <div id="main">
+		    	<div id="mains">
+		    		<div class="daily">
+		    			<div class="content_top re">
+		    			    <p>社区服务</p>
+		    	    	</div>
+		    			<div class="content_title">
+		    			    <h1>
+		    			    	综合服务队
+		    			    	<span style="text-align: right;
+		    			    		display: block;float: right;
+		    			    		width: 180px; height: 40px;">
+		    		    	           航空科普队</span>
+		    	     		</h1>
+		    	    	</div>
+                        <div class="content1 l">
+                            <img src="img/daily-pic1.png" alt="Norway">
+                            <div class="container">
+                                <p>综合服务队的工作包括进社区教小孩子做手工，
+		    	    			协助社区进行商铺调查，环保调查，在社区积极打扫卫生，
+		    	    			发一些市民行为准则和法制宣传单，还有摆放共享单车，
+		    	    			将路上的小广告进行了清理等活动。
+		    	    			队伍做的每项工作都会提前与社区联系并确定。</p>
+                            </div>
+                        </div>
+                        <div class="content2 r">
+                            <img src="img/daily-pic5.png" alt="Norway">
+                            <img src="img/daily-pic6.png" alt="Norway">
+                            <div class="container">
+                                <p>航空科普队主要为宣讲学校特色而建立的，
+                                	主要活动为进社区，宣讲航空知识，
+                                	以及协助社区的小孩子组装飞机模型，
+                                	给孩子们既积极开展有关科普知识，
+                                	共同参加科普活动，使孩子们了解更多的科普内容。
+                                	进一步宣扬学校特色。</p>
+                            </div>
+                        </div>
+                        <div class="content3 r">
+                            <img src="img/daily-pic3.png" alt="Norway" style="height:;">
+                            <img src="img/daily-pic4.png" alt="Norway" style="height:;">
+                        </div>
+		    		</div>
+		    		<div class="air_show ab" style="top: 700px;">
+		    			<div class="content_top re">
+		    			    <p>郑州航展</p>
+		    		    </div>
+		    		    <div class="content_title">
+		    		    	<h1>航空盛宴</h1>
+		    		    </div>
+		    	    	<div class="content ab">
+		    	    		<img src="img/air_show-pic1.png"/ class="pic1">
+		    	    		<div class="p1 ab">
+		    	    			<p>4月27日上午，
+		    	    			        为期5天的2018郑州航展暨世界编队特技
+		    	    			        飞行年度颁奖盛典在郑州上街机场隆重开幕。
+		    	    			        这次五一小长假，郑州航展不仅准备了冲上云霄、
+		    	    			        空中芭蕾、蓝天绘画等特技项目，更有航展美食节，
+		    	    			        晚霞飞行音乐秀等你来狂欢。</p>
+		    	    		</div>
+		    	    		<p class="p2 ab">本次郑州航展，郑州航院一共招募了143名志愿者，
+		    	    			他们分配在现场管理，直播，飞行保障，物料管理，
+		    	    			区宣传推介等岗位，作为当代大学生，他们有素质，
+		    	    			有文化，有担当，他们活跃在航展现场的各个区域，
+		    	    			不论是客服咨询，或是物料管理，亦或是区宣传推介，
+		    	    			他们都在自己的岗位上发挥着作用，
+		    	    			为航展的正常有序进行贡献自己的力量。</p>
+		    	    		<img src="img/air_show-pic2.png" alt="" / class="ab pic2">
+		    	    		<img src="img/air_show-pic3.png" alt="" / class="ab pic3">
+		    	    		<img src="img/air_show-pic4.png" alt="" / class="ab pic4">
+		    	    	</div>
+		    		</div>
+		    		<div class="dragen_boat ab" style="top: 1450px;">
+		    			<div class="content_top re">
+		    			    <p>轩辕龙舟</p>
+		    		    </div>
+		    		    <div class="content_title">
+		    			    <h1>百舸争流</h1>
+		    		    </div>
+		    		    <div  class="content ab">
+		    		    	<img src="img/dragen_boat-pic1.png"/ class="pic1">
+		    	    		<div class="p1 ab">
+		    	    			<p>“郑航龙舟队”始创于2012年4月，
+		    	    				是由我校学生自发组织成立的大学生龙舟运动竞赛和文化传承组织。
+		    	    				自第三届中华轩辕龙舟大赛开始至今，每年都报名参赛，并取得优异成绩。</p>
+		    	    		</div>
+		    	    		<p class="p2 ab">第七届中华轩辕龙舟大赛由河南省体育局、
+		    	    			河南省文化厅、河南日报报业集团、郑州市人民政府、
+		    	    			中华炎黄文化研究会、河南省皇帝故里基金会主办，
+		    	    			以弘扬中华优秀文化、推动龙舟运动发展、助推中原经济区建设为宗旨，
+		    	    			以“轩辕作舟，群英争标”为主题，
+		    	    			是我省举办的一次规模大、规格高、群众参与广泛的文化体育盛事。
+		    	    			由于参赛人员多达1000余人，场面隆重,
+		    	    			大赛组委会特邀请我校志愿者参与本次志愿服务工作，
+		    	    			共同将本次大赛举办的更加圆满。</p>
+		    	    		<img src="img/dragen_boat-pic2.png" class="pic2">    			
+		    		    </div>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div id="foot">
+		    	<div class="foot_menu re">
+		    		<ul class="ab">
+		    			<li class="l"><a href="index.html">学习生涯</a></li>
+		    			<li class="l"><a href="社团活动.html">社团活动</a></li>
+		    			<li class="l"><a href="志愿者.html">
+		    				志&nbsp;&nbsp;愿&nbsp;&nbsp;者</a></li>
+		    			<li class="l"
+		    				style="border-right-style:solid ;
+				            border-right-width: 2px;
+				            border-color: aliceblue;">
+				            <a href="炎黄跑团.html">炎黄跑团</a>
+		    			</li>
+		    		</ul>
+		    		<p class="ab">分享到：</p>
+		    		<a href="#"><div class="share ab"></div></a>
+		    	</div>
+		    	<div class="copyright">
+		    		<p>
+		    			联系电话：13326468297&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    			邮箱：w1p2f3@126.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    			单位：郑州航空工业管理学院<br />
+		    			copyright © 2016-2020 WPF 版权所有，翻录必究
+		    		</p>
+		    	</div>
+		    	<div class="go_top">
+		    		<a href="#all" class="scroll">
+		    			<img src="img/foot_top.png"/>
+		    		</a>
+		    	</div>
+		    </div>
+		    <!--<a href="#to-top" id="toTop" style="display: block;"> 
+		    	<span id="toTopHover" style="opacity: 1;"> </span>
+		    </a>-->
+		    <!--<div id="go_top">
+		    	<img src="img/to-top.png"/>
+		    </div>-->
+		</div>
+		<!--<a href="" id="gotop">冲上去</a>-->
+	</body>
+</html>

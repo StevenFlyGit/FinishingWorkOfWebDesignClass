@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>
+			steven小屋
+		</title>
+		<style type="text/css">
+			*{
+				margin: 0px;padding: 0px;
+			}
+			body{
+				margin: 0px;padding: 0px;
+			}
+			.r{float: right;}
+			.l{float: left;}
+			.bl{display: block;}
+			.ab{position: absolute;}
+			.re{position: relative;}
+			ul{list-style: none;}
+			a{text-decoration: none;
+			color: black;}
+			@font-face {
+				font-family: "z1";
+				src: url("font/f.ttf");
+			}@font-face {
+				font-family: "z2";
+				src: url("font/e.otf");
+			}
+			@keyframes rond{
+				0% {transform : rotate(0deg);}
+				100% {transform : rotate(360deg);}
+			}
+			@-webkit-keyframes rond{
+				0%{-webkit-transform : rotate(0deg);}
+				100%{-webkit-transform : rotate(360deg);}
+			}
+			@-moz-keyframes rond{
+				0%{-webkit-transform : rotate(0deg);}
+				100%{-webkit-transform : rotate(360deg);}
+			}
+			@-ms-keyframes rond{
+				0%{-webkit-transform : rotate(0deg);}
+				100%{-webkit-transform : rotate(360deg);}
+			}
+			@-o-keyframs rond{
+				0%{-webkit-transform : rotate(0deg);}
+				100%{-webkit-transform : rotate(360deg);}
+			}
+			#all{
+				width: 100%;
+				height: auto;
+				background: rgb(13,36,54);
+			}
+			#top{
+				width: 1200px;
+				height: 180px;
+				margin: 0px auto;
+				background: url(img/top-bg.jpg) no-repeat;
+				background-position: -110px 0px;
+			}
+			#top h1{
+				font: "arial narrow";
+				margin: 30px 60px 0px 0px;
+				font-size: 45px;
+				color: azure;
+			}
+			.logo{
+				margin: 15px 0px 0px 60px;
+			}
+			/*.search{
+				height: 30px;width: 155px;
+				top: 71px;left: 100px;
+			}
+			.searchr{
+				height: 26px;width: 120px;
+				background: #F1F1F1;
+			}
+			.searchl{
+				height: 30px;width: 25px;
+				background: url(img/wpfsearch.jpg) no-repeat center;
+				background-size: 100% 100%;
+				border-right: 2px;
+				display: block;
+				float: left;
+			}*/
+			#navigation{
+				width: 1000px;
+				height: 40px;
+				margin: 0px auto;
+				background: rgb(31,136,217);
+				border-bottom: 2px solid #F0F8FF;
+			}
+			#navigation li{
+				font-family: z2;
+				font-size: 21px;
+			}
+			.guide{
+				width: 900px;
+				height: 40px;
+			}
+			.guide li{
+				width: 150px;
+				text-align: center;
+				line-height: 40px;
+				border-color: rgb(180,180,180);
+			}
+			.lir{
+				border-left-style: solid;
+			}
+			.lir:hover{
+				background: url(img/menu.jpg) center;
+			}
+			.ma{
+				color: white;
+			}
+			#banner{
+				width: 1000px;
+				height: 300px;
+				margin: 0px auto;
+				background: url(img/banner_wrapper.png);
+			}
+			#banner1{
+				height: 250px;
+				width: 100%;
+				position: relative;
+				top: 25px;
+			}
+			#banner .pic1{
+				width: 288px;
+				height: 180px;
+				position: absolute;
+				top: 30px;
+				left: 100px;
+				padding: 10px;
+				border-color: white;
+				border-style: solid;
+			}
+			.art{
+				color: white;
+				position: absolute;
+				top: 30px;
+				right: 100px;width: 400px;
+			}
+			#main{
+				width: 1000px;height: 1350px;
+				margin: 0px auto;
+				background: rgb(209,209,209);
+			}
+			#main span{
+				display: block;
+				font-size: 30px;
+				width: 25px;
+				font-family: 楷体;
+				color: #fff;
+				text-shadow:0 0 5px #CCCCCC, 0 0 10px #CCCCCC, 0 0 15px #CCCCCC, 0 0 20px mediumspringgreen, 0 0 25px mediumspringgreen, 0 0 30px #095816, 0 0 50px #095816, 0 0 80px #095816, 0 0 100px #095816, 0 0 150px #095816;
+			}
+			#mains{
+				width: 1000px;height: 1350px;
+				position: absolute;
+			}
+			#main1{
+				width: 500px;height: 1270px;
+				position: absolute;
+				top: 30px;
+			}
+			#main2{
+				width: 500px;height: 1270px;
+				position: absolute;
+				left: 500px;top: 30px;
+			}
+			.case_round1{
+				height: 100px;width: 100px;
+				left: 50px;
+			}
+			.case_round1 .load{
+				color: #fff;
+                font-family: calibri;
+                text-align:center;
+                top :37px;left : 31.5px;
+                height: 180px;width: 180px;
+                border-radius: 50%;
+                background: rgb(33,131,237);
+			}
+			.case_round1 .round{
+				height: 210px;
+                width: 210px;
+                border: 2px solid #0CF;
+                border-radius: 50%;
+                top: 20px;left: 15px;
+                animation: rond 3s infinite;
+                -webkit-animation: rond 3s infinite;
+			}
+			.case_round1 .test{
+				height: 15px;
+                width: 15px;
+                background-color: rgb(16,237,254);
+                border-radius: 50%;
+                top: 0px;left: 10px;
+                margin: 17px;
+			}
+			.case_round2{
+				height: 100px;width: 100px;
+				right: 40px;bottom: 40px;
+			}
+			.case_round2 .load{
+				color: #fff;
+                font-family: calibri;
+                text-align:center;
+                bottom :37px;right : 31.5px;
+                height: 180px;width: 180px;
+                border-radius: 50%;
+                background: rgb(33,131,237);
+			}
+			.case_round2 .round{
+				height: 20px;
+                width: 250px;
+                border: 2px solid #0CF;
+                border-radius: 50%;
+                bottom: 30px;right: -6px;
+                animation: rond 3s infinite;
+                -webkit-animation: rond 3s infinite;
+			}
+			.case_round2 .test{
+				height: 15px;
+                width: 15px;
+                background-color: rgb(16,237,254);
+                border-radius: 50%;
+                top: 0px;left: 10px;
+                margin: 19px;
+			}
+			.association{
+				width: 470px;height: 1012px;
+				top: 250px;
+				border-left: 10px ridge aquamarine;
+				border-bottom: 8px ridge aquamarine;
+				margin-left: 20px;
+			}
+			.mf{
+				width: 480px;height: 450px;
+			}
+			.mf .s2{
+				right: 80px;top:-235px
+			}
+			.mf .s1{
+				right: 125px;top:-220px
+			}
+			.mf p{
+				font-size: 14px;
+				text-indent: 2em;
+				width: 430px;
+				margin: 0 auto;
+				border-bottom: 2px dashed lime;
+				padding-bottom: 18px;
+			}
+			.mf .pic1{
+				right: 90px;top: -110px;
+			}
+			.mf .pic2{
+				left: 40px;top: 250px;
+			}
+			.mf .pic3{
+				left: 255px;top: 250px;
+			}
+			.hb{
+				top: 450px;
+				width: 480px;height: 300px;
+			}
+			.hb h1{
+				top: 30px;left: 30px;
+				font-family: 楷体;
+				color: #fff;
+				text-shadow:0 0 5px #CCCCCC, 0 0 10px #CCCCCC, 0 0 15px #CCCCCC, 0 0 20px mediumspringgreen, 0 0 25px mediumspringgreen, 0 0 30px #095816, 0 0 50px #095816, 0 0 80px #095816, 0 0 100px #095816, 0 0 150px #095816;
+			}
+			.hb p{
+				font-size: 14px;
+				text-indent: 2em;
+				width: 430px;
+				margin: 0 auto;
+				border-bottom: 2px dashed lime;
+				padding: 100px 0px 18px 0px;	
+			}
+			.hb img{
+				margin: 20px 0px 0px 30px;
+			}
+			.activity{
+				width: 470px;height: 1012px;
+				bottom: 250px;
+				border-right: 10px ridge aquamarine;
+				border-top: 8px ridge aquamarine;
+				margin-right: 20px;
+			}
+			.national_music{
+				width: 480px;
+			}
+			.national_music h1{
+				font-family: 楷体;
+				color: #fff;
+				text-shadow:0 0 5px #CCCCCC, 0 0 10px #CCCCCC, 0 0 15px #CCCCCC, 0 0 20px mediumspringgreen, 0 0 25px mediumspringgreen, 0 0 30px #095816, 0 0 50px #095816, 0 0 80px #095816, 0 0 100px #095816, 0 0 150px #095816;
+			    margin: 20px 0px 0px 20px;
+			}
+			.national_music img{
+				right: 40px;
+				top: 10px;
+			}
+			.national_music p{
+				font-size: 14px;
+				text-indent: 2em;
+				width: 430px;
+				margin: 0 auto;
+				border-bottom: 2px dashed lime;
+				padding: 30px 0px 18px 0px;
+			}
+			.national_music video{
+				padding: 20px 0px 0px 40px;
+			}
+			.xs{
+				top: 657.2px;width: 480px;
+			}
+			.xs .p1{
+				font-size: 14px;
+				text-indent: 2em;
+				width: 430px;
+				margin: 0 auto;
+				border-bottom: 2px dashed lime;
+				padding: 30px 0px 18px 0px;
+			}
+			.xs .p2{
+				font-size: 15px;
+				font-family: 楷体;
+				width: 430px;
+				margin: 0 auto;
+				padding-top: 40px;
+				line-height: 25px;
+			}
+			.xs .s1{
+				top: 180px;right: 120px;
+			}
+			.xs .s2{
+				top: 165px;right: 70px;
+			}
+			.xs .pic1{
+				margin: 10px 150px 0px 30px;
+			}
+			.xs .pic2{
+				margin: 30px 100px 0px 70px;
+			}
+			#foot{
+				width: 100%;
+				height: 120px;
+				margin: 0px auto;
+				background: url(img/foot_wrapper.png) repeat-x;
+				font-size: small;
+			}
+			.foot_menu{
+				width: 1000px;
+				height: 50px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			.foot_menu ul{
+				height: 30px;
+				line-height: 30px;
+				margin: 0 auto;
+				padding-top: 10px;
+				left: 150px;
+			}
+			.foot_menu li{
+				width: 100px;
+				border-left-style:solid ;
+				border-left-width: 2px;
+				border-color: aliceblue;
+			}
+            .foot_menu a:hover{
+	            color: aliceblue;
+			}
+			.share{
+				top: 5px;
+				right: 100px;
+				width: 220px;
+				height: 40px;
+				width: 220px;
+				background: url(img/share.png) top;
+			}
+			.share:hover{
+				background: url(img/share.png);
+				background-position: 0px 47px;
+			}
+			.foot_menu p{
+				right: 320px;
+				top: 15.6px;
+				margin: 0 auto;			
+			}
+			.go_top{
+				text-align: center;
+				adding-top: 10px;
+			}
+			.copyright{
+				width: 1000px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			#go_top{
+				position: fixed;
+				right: 50px;
+				bottom: 100px;
+			}
+			/*#toTop {
+				display: none;
+				position: fixed;
+				bottom: 14px;
+				right: 3%;
+				overflow: hidden;
+				width: 40px;
+				height: 40px;
+				border: none;
+				text-indent: 100%;
+				background: url(img/to-top.png) no-repeat 0px 0px;
+            }
+            #toTopHover {
+            	width: 40px;
+            	height: 40px;
+            	display: block;
+            	overflow: hidden;
+            	float: right;
+            	opacity: 0;
+            	-moz-opacity: 0;
+            	ilter: alpha(opacity=0);
+            }*/
+		</style>
+		<!--<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+		<script type="text/javascript">
+			 $("#go_top").click(function () {
+        var speed=5000;    //设置滑动的速度
+        $('body,html').animate({ scrollTop: 0 }, speed);
+        return false;
+    });-->
+		</script>
+		
+		<script>
+//			(function($){$.fn.UItoTop=function(options){var defaults={text:'To Top',min:200,inDelay:600,outDelay:400,containerID:'toTop',containerHoverID:'toTopHover',scrollSpeed:1200,easingType:'linear'},settings=$.extend(defaults,options),containerIDhash='#'+settings.containerID,containerHoverIDHash='#'+settings.containerHoverID;$('body').append('<a href="#" id="'+settings.containerID+'">'+settings.text+'</a>');$(containerIDhash).hide().on('click.UItoTop',function(){$('html, body').animate({scrollTop:0},settings.scrollSpeed,settings.easingType);$('#'+settings.containerHoverID,this).stop().animate({'opacity':0},settings.inDelay,settings.easingType);return false;}).prepend('<span id="'+settings.containerHoverID+'"></span>').hover(function(){$(containerHoverIDHash,this).stop().animate({'opacity':1},600,'linear');},function(){$(containerHoverIDHash,this).stop().animate({'opacity':0},700,'linear');});$(window).scroll(function(){var sd=$(window).scrollTop();if(typeof document.body.style.maxHeight==="undefined"){$(containerIDhash).css({'position':'absolute','top':sd+$(window).height()-50});}
+//if(sd>settings.min)
+//$(containerIDhash).fadeIn(settings.inDelay);else
+//$(containerIDhash).fadeOut(settings.Outdelay);});};})(jQuery);
+//			 function pageScroll(){
+//      //把内容滚动指定的像素数（第一个参数向右滚动的像素数，第二个参数向下滚动的像素数）
+//              window.scrollBy(0,10);
+//      //延时递归调用，模拟滚动向上效果
+//              scrolldelay = setTimeout('pageScroll()',10);
+//      //获取scrollTop值，声明了DTD的标准网页取document.documentElement.scrollTop，
+//      //否则取document.body.scrollTop；因为二者只有一个会生效，另一个就恒为0，所以取和值
+//      //可以得到网页的真正的scrollTop值
+//              var sTop=document.documentElement.scrollTop+document.body.scrollTop;
+//      //判断当页面到达顶部，取消延时代码（否则页面滚动到顶部会无法再向下正常浏览页面）
+//              if(sTop==0) clearTimeout(scrolldelay);
+//           }
+		</script>
+	</head>
+	<body>
+		<div id="all">
+			<div id="top">
+				<img src="img/logo.png"/ class="logo">
+				<h1 class="r">我 的 世 界</h1>
+				<!--<div class="search re">
+		    		<form action="" method="post">
+		    			<a href="www.baidu.com" class="searchl"></a>
+		    		    <input class="searchr" type="text" value="请输入搜索内容">
+		    	    </form>
+		    	</div>-->
+			</div>
+		    <div id="navigation">
+		    	<ul class="guide">
+		    		<li class="l" style="background: url(img/menu.jpg) center;
+		    			font-size: x-large;width: 160px;">
+		    			<a href="index.html" class="ma" target="_blank">Do myself</a>
+		    		</li>
+		    		<li class="l ma" style="width: 80px;">
+		    			阳光</li>
+		    			
+		    		</li>
+		    		<li class="l lir">
+		    			<a href="index.html" class="ma bl" target="_blank">学习生涯</a>
+		    		</li>
+		    		<li class="l lir">
+		    			<a href="社团活动.html" class="ma bl" target="_blank">社团活动</a>
+		    		</li>
+		    		<li class="l lir">
+		    			<a href="志愿者.html" class="ma bl" target="_blank">志&nbsp;愿&nbsp;者</a>
+		    		</li>
+		    		<li class="l lir" style="border-right-style: solid ;">
+		    			<a href="炎黄跑团.html" class="ma bl" target="_blank">炎黄跑团</a>
+		    		</li>
+		    	</ul>
+		    </div>
+		    <div id="banner">
+		    	<div id="banner1">
+		    		<div class="pic1 l" >
+		    		<img src="img/banner-pic2.png"/> 
+		    	    </div>
+		    	    <div class="art r">
+		    	    	<h1 style="font-family: 楷体 ;font-size: 35px;">
+		    	    		郑州航院学生社团联合会</h1>
+		    	    	<hr/>
+		    	    	<p style="font-size: 16px;text-indent: 33px;
+		    	    		padding-top: 15px;">
+		    	    		在大一入学之后，我参加并通过了我校学生社团联合会的面试，
+		    	    		顺利加入了我校的学生社团联合会并开始大一大二两年的任期。
+		    	    		这是一个需要有责任感，能锻炼个人综合能力的团队。
+		    	    		在这里，我们不仅需要管理全校所有的学生社团，还需要策划组织丰富多样的学生社团活动。</p>
+		    	    </div>
+		    	    <div>
+		    		
+		    	    </div>
+		    	</div>
+		    </div>
+		    <div id="main">
+		    	<div id="mains">
+		    		<div id="main1">
+		            	<div class="case_round1 ab">
+		            		<div class="round ab">
+		            			<div class="test ab"></div>
+		            		</div>
+		            		<div class="load ab">
+		            			<p style="line-height: 60px;
+		            				font-size: 45px;
+		            				padding-top: 30px;
+		            				font-family: z1;">
+	      	         		缤 纷<br 	/>社 团</p>
+		            		</div>
+		            	</div>
+		            	<div class="association ab">
+		            		<div class="mf ab">
+		            			<img src="img/mf-pic1.png"/ class="ab pic1">
+		            			<span class="ab s1">大学生</span>
+		            			<span class="ab s2">魔方协会</span>
+		            			<p>魔方是一种高雅的健身活动，它可以锻炼人的手脑并用能力，
+		            			        对培养人的动作技能都十分有效；可增强人的记忆力，
+		            			        丰富空间想象力；可培养人的耐力和毅力，更重要的是撩妹小技能。
+		            			        玩过魔方的人不少，解出魔方的人不多。
+		            			        六种颜色的变化组合对于人的一身来说近乎于无穷，
+		            			        要从这么多种变化中凭空找出唯一一种组合来恢复魔方无疑是困难的，
+		            			        也是它的魅力所在。一个小小的魔方隐藏着神奇的魔力，
+		            			        吸引着观众们的目光，灵巧的手迅速的旋转，
+		            			        眨眼之间魔方已经回到了原始的状态<br />
+		            			   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		            			   世界魔方协会（World Cube Association，简称WCA）
+		            			        成立于2003年，主要致力于举办魔方的速拧、盲拧、和最少步等项目的赛事。
+		            			        通过世界魔方协会比赛的认证成绩可以记载入世界纪录。</p>
+		            			<img src="img/mf-pic2.png"/ class="ab pic2">
+		            			<img src="img/mf-pic3.png"/ class="ab pic3">
+		            		</div>
+		            		<div class="hb ab">
+		            			<h1 class="ab">大学生滑板协会</h1>
+		            			<p>滑板项目可以说是极限运动的鼻祖，
+		            				滑板是冲浪在陆地上的延伸，而许多的极限项目又由滑板运动延伸而来。
+		            				20世纪50年代末60年代初由冲浪运动演变而成的滑板运动，
+		            				在而今已成为地球上最“酷”的运动。
+		            				滑板是一项锻炼人的身体更锻炼人的意志的一项非常有意义的运动，
+		            				越来越多的同学发现了这项运动的魅力并投入其中。
+		            				在二十世纪五十年代末的太平洋彼岸，
+		            				善于发明创造的爱迪生的后裔们把古老神州人们的幻想或多或少地变成了现实。
+		            				五十年代初美国西海岸是弄潮儿们大试身手的地方。
+		            				他们使用普通木头和价格昂贵的轻木制成的冲浪板在风口浪尖上寻找乐趣。</p>
+		            			<img src="img/hb-pic1.png"/>
+		            		</div>
+		            	</div>
+		            </div>
+		            <div id="main2">
+		            	<div class="case_round2 ab">
+		            		<div class="round ab">
+		            			<div class="test ab"></div>
+		            		</div>
+		            		<div class="load ab">
+		            			<p style="line-height: 60px;
+		            				font-size: 45px;
+		            				padding-top: 30px;
+		            				font-family: z1;">
+	      	         		精 彩<br />活 动</p>
+		            		</div>
+		            	</div>
+		            	<div class="activity ab">
+		            		<div class="national_music ab">
+		            			<h1>民乐专场演出</h1>
+		            			<img src="img/national_music.png"/ class="ab">
+		            			<p>2018年6月1日，
+		            				“芳华如初·弦绎远方”——民乐团专场音乐会在郑航图书馆第一报告厅隆重举行。
+		            				党政办公室主任李广锋、副主任刘儒，校团委副书记王茜、李振宇，
+		            				公共艺术教学部主任冉玉，理学院院长程少华，
+		            				航空工程学院院长赵辉等众多老师莅临现场，与我校500余名师生一同观看演出。
+		            			           本场音乐会与毕业季系列主题活动相结合，
+		            			           由我校党政办主办，校团委、校学生社团联合会和大学生民乐团联合承办。<br />
+		            			    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		            			           以下为部分曲目介绍：  
+		            			    <br /><strong>《战台风》</strong><br />
+		            			    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		            			    曲调气势磅礴，音乐形象鲜明。本曲富于变化，时而紧张激烈，
+		            			           时而优美抒情的，演出者将两种不同的情感表现到了极致。
+		            			    <br /><strong>《典狱司》</strong><br />
+		            			    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		            			    “昨夜梦又去，商台末子添新衣，旧曲又一局，北雪踏典狱”。
+		            			           二胡与琵琶将人带入了民国时代。
+		            			    <br /><strong>《渔舟唱晚》</strong><br />
+		            			    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		            			    “落霞与孤鹜齐飞，秋水共长天一色，渔舟唱晚，响穷彭蠡之滨”。
+		            			           听古筝、小提琴合奏，享彭蠡湖畔美景。</p>
+		            			<video width="400" height="200" controls="controls">
+		            				<source src="img/民乐团晚会 标清(270P).MP4" type="video/mp4"></source>
+		            				<source src="myvideo.ogv" type="video/ogg"></source>
+		            				<source src="myvideo.webm" type="video/webm"></source>
+		            				<object width="" height="" type="application/x-shockwave-flash" data="myvideo.swf">
+		            					<param name="movie" value="myvideo.swf" />
+		            					<param name="flashvars" value="autostart=true&amp;file=myvideo.swf" />
+		            				</object>
+		            				当前浏览器不支持 video直接播放，点击这里下载视频： <a href="myvideo.webm">下载视频</a>
+		            			</video>    
+		            		</div>
+		            		<div class="xs ab">
+		            			<p class="p1">
+		            				我们的老朋友——飞航相声社于4月19日在01A203与郑航学子相约戊戌年相声专场，
+		            				为我们献上了一场精彩纷呈的视听盛宴！千呼万唤始出来的中场微博抽奖环节中，
+		            				殷天奇与的模仿秀别出心裁，模仿了萌妹子与女汉子、恋爱中的男女等不同角色，
+		            				可谓精彩绝伦！令观众们不住拍手叫好！
+		            			</p>
+		            			<img src="img/xs-pic1.png"/ class="pic1">
+		            			<span class="ab s1">戊戌年</span>
+		            			<span class="ab s2">相声专场</span>
+		            			<img src="img/xs-pic2.png"/ class="pic2">
+		            			<p class="p2">
+		            				<strong>说一说世间百态芸芸众生<br />
+		            			           学一学天地万物冷暖人情<br />
+                                                                                                     逗一逗嬉笑怒骂赵钱孙李<br />
+                                                                                                     唱一唱人间正道纯朴民风</strong>
+		            			</p>
+		            		</div>
+		            	</div>
+		            </div>
+		    	</div>
+		    </div>
+		    <div id="foot">
+		    	<div class="foot_menu re">
+		    		<ul class="ab">
+		    			<li class="l"><a href="index.html">学习生涯</a></li>
+		    			<li class="l"><a href="社团活动.html">社团活动</a></li>
+		    			<li class="l"><a href="志愿者.html">
+		    				志&nbsp;&nbsp;愿&nbsp;&nbsp;者</a></li>
+		    			<li class="l"
+		    				style="border-right-style:solid ;
+				            border-right-width: 2px;
+				            border-color: aliceblue;">
+				            <a href="炎黄跑团.html">炎黄跑团</a>
+		    			</li>
+		    		</ul>
+		    		<p class="ab">分享到：</p>
+		    		<a href="#"><div class="share ab"></div></a>
+		    	</div>
+		    	<div class="copyright">
+		    		<p>
+		    			联系电话：13326468297&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    			邮箱：w1p2f3@126.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    			单位：郑州航空工业管理学院<br />
+		    			copyright © 2016-2020 WPF 版权所有，翻录必究
+		    		</p>
+		    	</div>
+		    	<div class="go_top">
+		    		<a href="#all" class="scroll">
+		    			<img src="img/foot_top.png"/>
+		    		</a>
+		    	</div>
+		    </div>
+		    <!--<a href="#to-top" id="toTop" style="display: block;"> 
+		    	<span id="toTopHover" style="opacity: 1;"> </span>
+		    </a>-->
+		    <!--<div id="go_top">
+		    	<img src="img/to-top.png"/>
+		    </div>-->
+		</div>
+		<!--<a href="" id="gotop">冲上去</a>-->
+	</body>
+</html>
