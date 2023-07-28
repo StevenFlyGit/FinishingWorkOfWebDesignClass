@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>
+			steven小屋-郑州航展
+		</title>
+		<style type="text/css">
+			*{
+				margin: 0px;padding: 0px;
+			}
+			.mains,.mains::before,.mains::after{
+				box-sizing: border-box;
+			}
+			body{
+				margin: 0px;padding: 0px;
+			}
+			.r{float: right;}
+			.l{float: left;}
+			.bl{display: block;}
+			.ab{position: absolute;}
+			.re{position: relative;}
+			ul{list-style: none;}
+			a{text-decoration: none;
+			color: black;}
+			@font-face {
+				font-family: "z1";
+				src: url("font/f.ttf");
+			}@font-face {
+				font-family: "z2";
+				src: url("font/e.otf");
+			}
+			@keyframes clipMe {
+				0%,100% {
+				 	clip: rect(0px, 1100.0px, 10px, 0px);
+				}
+				25% {
+				    clip: rect(0px, 10px, 1100.0px, 0px);
+				}
+				50% {
+					clip: rect(1090.0px, 1100.0px, 1100.0px, 0px);
+				}
+				75% {
+				    clip: rect(0px, 1100.0px, 1100.0px, 1090.0px);
+				}
+			}
+			#all{
+				width: 100%;
+				height: auto;
+				background: rgb(13,36,54);
+			}
+			#top{
+				width: 1200px;
+				height: 180px;
+				margin: 0px auto;
+				background: url(img/top-bg.jpg) no-repeat;
+				background-position: -110px 0px;
+			}
+			#top h1{
+				font: "arial narrow";
+				margin: 30px 60px 0px 0px;
+				font-size: 45px;
+				color: azure;
+			}
+			.logo{
+				margin: 15px 0px 0px 60px;
+			}
+			/*.search{
+				height: 30px;width: 155px;
+				top: 71px;left: 100px;
+			}
+			.searchr{
+				height: 26px;width: 120px;
+				background: #F1F1F1;
+			}
+			.searchl{
+				height: 30px;width: 25px;
+				background: url(img/wpfsearch.jpg) no-repeat center;
+				background-size: 100% 100%;
+				border-right: 2px;
+				display: block;
+				float: left;
+			}*/
+			#navigation{
+				width: 1000px;
+				height: 40px;
+				margin: 0px auto;
+				background: rgb(31,136,217);
+				border-bottom: 2px solid #F0F8FF;
+			}
+			#navigation li{
+				font-family: z2;
+				font-size: 21px;
+			}
+			.guide{
+				width: 900px;
+				height: 40px;
+			}
+			.guide li{
+				width: 150px;
+				text-align: center;
+				line-height: 40px;
+				border-color: rgb(180,180,180);
+			}
+			.lir{
+				border-left-style: solid;
+			}
+			.lir:hover{
+				background: url(img/menu.jpg) center;
+			}
+			.ma{
+				color: white;
+			}
+			#banner{
+				width: 1000px;
+				height: 300px;
+				margin: 0px auto;
+				background: url(img/banner_wrapper.png);
+			}
+			#banner1{
+				height: 250px;
+				width: 100%;
+				position: relative;
+				top: 25px;
+			}
+			#banner .pic1{
+				position: absolute;
+				top: 20px;
+				left: 70px;
+				padding: 10px 10px 7px 10px;
+				border-color: white;
+				border-style: solid;
+			}
+			
+			.art{
+				color: white;
+				position: absolute;
+				right: 100px;top: 10px;
+				width: 300px;height: 200px;
+				text-indent: 2em;
+			}
+			#main{
+				width: 1000px;
+				min-height: 1000px;
+				margin: 0px auto;
+				background: rgb(209,209,209);
+				position: relative;
+			}
+			
+            #main p{
+            	font-family: 楷体;
+            	color: cornflowerblue;
+            }
+            
+            .introductionBig{
+            	width: 100%;
+            	height: 250px;
+            	font-size: 20px;
+            	line-height: 25px;
+            	padding-top: 30px;
+            	
+            }
+            .introductionBig>div{
+            	width: 45%;
+            	height: 100%;
+            	box-sizing: border-box;
+            	text-align: center;
+            }
+            .introductionText_left{
+            	border-left: skyblue solid 4px;
+				border-bottom: skyblue solid 4px;
+				border-bottom-left-radius: 30px;
+				padding: 0px 0px 10px 10px;
+				left: 25px;
+            }
+            .introductionPic_right{
+            	border-left: skyblue groove 4px;
+            	right: 25px;
+            	padding-left: 10px;
+            }
+          
+            .introductionText_right{
+            	border-right: skyblue solid 4px;
+				border-bottom: skyblue solid 4px;
+				border-bottom-right-radius: 30px;
+				padding: 0px 10px 10px px;
+				right: 25px;
+            }
+            .introductionPic_left{
+            	border-right: skyblue groove 4px;
+            	left: 25px;
+            	padding-right: 10px;
+            }
+            
+            
+			#foot{
+				width: 100%;
+				height: 120px;
+				margin: 0px auto;
+				background: url(img/foot_wrapper.png) repeat-x;
+				font-size: small;
+			}
+			.foot_menu{
+				width: 1000px;
+				height: 50px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			.foot_menu ul{
+				height: 30px;
+				line-height: 30px;
+				margin: 0 auto;
+				padding-top: 10px;
+				left: 150px;
+			}
+			.foot_menu li{
+				width: 100px;
+				border-left-style:solid ;
+				border-left-width: 2px;
+				border-color: aliceblue;
+			}
+            .foot_menu a:hover{
+	            color: aliceblue;
+			}
+			.share{
+				top: 5px;
+				right: 100px;
+				width: 220px;
+				height: 40px;
+				width: 220px;
+				background: url(img/share.png) top;
+			}
+			.share:hover{
+				background: url(img/share.png);
+				background-position: 0px 47px;
+			}
+			.foot_menu p{
+				right: 320px;
+				top: 15.6px;
+				margin: 0 auto;			
+			}
+			.go_top{
+				text-align: center;
+				adding-top: 10px;
+			}
+			.copyright{
+				width: 1000px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			#go_top{
+				position: fixed;
+				right: 50px;
+				bottom: 100px;
+			}
+			
+			
+			/*图片滚动特效*/
+			section {
+				width: 95%;
+				height: 95%;
+				border-top: 5px solid #65587f;
+				border-left: 5px solid #f18867;
+				border-right: 5px solid #e85f99;
+				border-bottom: 5px solid #50bda1;
+				
+				position: relative;
+				perspective: 1000px;  
+			}
+			.door-l, .door-r {
+				position: absolute;
+				top: 0;
+				width: 50%;
+				height: 100%;
+				background-color: #6495ED;
+				transition: all 1s; 
+				z-index: 99;
+			}
+			.door-l {
+				left: 0;
+				transform-origin: left;
+				border-right: 1px solid #fff;
+			}
+			.door-r {
+				right: 0;
+				transform-origin: right;
+				border-left: 1px solid #fff;
+			}
+			
+			
+			
+			section:hover .door-l {
+				transform: translateX(-210px);
+			}
+			section:hover .door-r {
+				transform: translateX(210px);
+			}
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			nav {
+				width: 412px;
+				height: 237px;
+				overflow: hidden;
+			}
+			nav li {
+				float: left;
+			}
+			section img{
+				width: 370px;
+				height: 237px;
+			}
+			.airshow2017{
+				width: 2000px;
+				animation: moving1 7s linear infinite alternate;
+			}
+			@keyframes moving1 {
+				form {
+					transform: translateX(-1000px);
+				}
+				to {
+					transform: translateX(-1700px);
+				}
+			}
+			.airshow2018{
+				width: 2800px;
+				animation: moving2 10s linear infinite alternate;
+			}
+			@keyframes moving2 {
+				form {
+					transform: translateX(-1000px);
+				}
+				to {
+					transform: translateX(-2400px);
+				}
+			}
+			.airshowBeauty{
+				width: 4500px;
+				animation: moving3 17s linear infinite alternate;
+			}
+			@keyframes moving3 {
+				form {
+					transform: translateX(-1000px);
+				}
+				to {
+					transform: translateX(-4250px);
+				}
+			}
+			
+		</style>
+		
+		
+	</head>
+	<body>
+		<div id="all">
+			<div id="top">
+				<img src="img/logo.png"/ class="logo">
+				<h1 class="r">我 的 世 界</h1>
+				<!--<div class="search re">
+		    		<form action="" method="post">
+		    			<a href="www.baidu.com" class="searchl"></a>
+		    		    <input class="searchr" type="text" value="请输入搜索内容">
+		    	    </form>
+		    	</div>-->
+			</div>
+		    <div id="navigation">
+		    	<ul class="guide">
+		    		<li class="l" style="background: url(img/menu.jpg) center;
+		    			font-size: x-large;width: 160px;">
+		    			<a href="index.html" class="ma" target="_blank">Do myself</a>
+		    		</li>
+		    		<li class="l ma" style="width: 80px;">
+		    			活动</li>
+		    		<li class="l lir">
+		    			<a href="index.html" class="ma bl" target="_blank">学习生涯</a>
+		    		</li>
+		    		<li class="l lir">
+		    			<a href="社团活动.html" class="ma bl" target="_blank">社团活动</a>
+		    		</li>
+		    		<li class="l lir">
+		    			<a href="志愿者.html" class="ma bl" target="_blank">志&nbsp;愿&nbsp;者</a>
+		    		</li>
+		    		<li class="l lir" style="border-right-style: solid ;">
+		    			<a href="炎黄跑团.html" class="ma bl" target="_blank">炎黄跑团</a>
+		    		</li>
+		    	</ul>
+		    </div>
+		    <div id="banner">
+		    	<div id="banner1">
+		    		<div class="pic1 l" >
+		    		<img src="img/zzAirShow.jpg" width="440px"/> 
+		    	    </div>
+		    	    <div class="art r">
+		    	    	<h1 style="font-family: 楷体 ;font-size: 45px;">
+		    	    		郑州航展 </h1>
+		    	    	<hr/>
+		    	    	<p style="font-size: 16px;text-indent: 33px;
+		    	    		padding-top: 15px;">
+		    	    		郑州航展是以通用航空展览和特技飞行表演为主题的航空文化活动，旨在有效传递中国发展通用航空产业的理念，
+		    	    		为通航制造商、运营商、金融租赁机构和服务商、飞行器的拥有者、
+		    	    		驾驶者和爱好者等通航产业链各环节的参与者提供一个高效展示、交流、体验平台。
+		    	    	</p>
+		    	    </div>
+		    	    <div>
+		    		
+		    	    </div>
+		    	</div>
+		    </div>
+		    <div id="main">
+		    	<div class="mains">
+		    		<div class="introductionBig">
+		    			<div class="introductionText_left l re">
+		            		<br /><br /><br />
+		    				2017郑州航展<br />
+		    				跟随学校志愿者团队<br />
+		    				协助政府部门做宣传
+		    			</div>
+		    			<div class="introductionPic_right r re">
+		    				
+		    				<section>
+		            			<div class="door-l"></div>
+								<div class="door-r"></div>
+								<nav>
+									<ul class="airshow2017">
+										<li style="width: 200px; height: 237px;"></li>
+										<li><img src="img/airshow2017/pic1.jpg" alt=""/></li>
+										<li><img src="img/airshow2017/pic2.jpg" alt=""/></li>
+										<li><img src="img/airshow2017/pic3.jpg" alt=""/></li>
+										<li><img src="img/airshow2017/pic4.jpg" alt=""/></li>
+										<li><img src="img/airshow2017/pic5.jpg" alt="" style="width: 170px; height: 237px;"/></li>
+										<li><img src="img/airshow2017/pic6.jpg" alt=""/></li>
+									</ul>
+								</nav>
+		            		</section>
+		    			</div>
+		    		</div>
+		    		<div class="introductionBig">
+		    			<div class="introductionPic_left l re">
+		    				<section>
+		            			<div class="door-l"></div>
+								<div class="door-r"></div>
+								<nav>
+									<ul class="airshow2018">
+										<li style="width: 200px; height: 237px;"></li>
+										<li><img src="img/airshow2018/pic1.jpg" alt=""/></li>
+										<li><img src="img/airshow2018/pic2.jpg" alt=""/></li>
+										<li><img src="img/airshow2018/pic3.jpg" alt="" style="width: 170px; height: 237px;" /></li>
+										<li><img src="img/airshow2018/pic4.jpg" alt=""/></li>
+										<li><img src="img/airshow2018/pic5.jpg" alt=""/></li>
+										<li><img src="img/airshow2018/pic6.jpg" alt=""/></li>
+										<li><img src="img/airshow2018/pic7.jpg" alt=""/></li>
+									</ul>
+								</nav>
+		            		</section>
+		    			</div>
+		    			<div class="introductionText_right r re">
+		    				<br /><br /><br />
+		    				2018郑州航展<br />
+		    				由学姐介绍，已社会志愿者身份参加航展<br />
+		    				在现场管理部负责全体参展人员的证件制作
+		    			</div>
+		    		</div>
+		    		<div class="introductionBig">
+		    			<div class="introductionText_left l re">
+		            		<br /><br /><br /><br /><br />
+		    				航展展览图片
+		    			</div>
+		    			<div class="introductionPic_right r re">
+		    				<section>
+		            			<div class="door-l"></div>
+								<div class="door-r"></div>
+								<nav>
+									<ul class="airshowBeauty">
+										<li style="width: 200px; height: 237px;"></li>
+										<li><img src="img/airshowContent/pic1.jpg" alt=""/></li>
+										<li><img src="img/airshowContent/pic2.jpg" alt=""/></li>
+										<li><img src="img/airshowContent/pic3.jpg" alt=""/></li>
+										<li><img src="img/airshowContent/pic4.jpg" alt=""/></li>
+										<li><img src="img/airshowContent/pic5.jpg" alt=""/></li>
+										<li><img src="img/airshowContent/pic6.jpg" alt=""/></li>
+										<li><img src="img/airshowContent/pic7.jpg" alt=""/></li>
+										<li><img src="img/airshowContent/pic8.jpg" alt=""/></li>
+										<li><img src="img/airshowContent/pic9.jpg" alt=""/></li>
+										<li><img src="img/airshowContent/pic10.jpg" alt="" style="width: 170px; height: 237px;"/></li>
+										<li><img src="img/airshowContent/pic11.jpg" alt=""/></li>
+										<li><img src="img/airshowContent/pic12.jpg" alt=""/></li>
+									</ul>
+								</nav>
+		            		</section>
+		    			</div>
+		    		</div>
+		    		<div class="introductionBig">
+		    			<div class="introductionPic_left l re">
+		    				<section>
+		            			<div class="door-l"></div>
+								<div class="door-r"></div>
+								<nav>
+									<ul class="airshowBeauty">
+										<li style="width: 200px; height: 237px;"></li>
+										<li><img src="img/airshowOutside/pic1.jpg" alt=""/></li>
+										<li><img src="img/airshowOutside/pic2.jpg" alt=""/></li>
+										<li><img src="img/airshowOutside/pic3.jpg" alt=""/></li>
+										<li><img src="img/airshowOutside/pic4.jpg" alt=""/></li>
+										<li><img src="img/airshowOutside/pic5.jpg" alt=""/></li>
+										<li><img src="img/airshowOutside/pic6.jpg" alt=""/></li>
+										<li><img src="img/airshowOutside/pic7.jpg" alt=""/></li>
+										<li><img src="img/airshowOutside/pic8.jpg" alt=""/></li>
+										<li><img src="img/airshowOutside/pic9.jpg" alt=""/></li>
+										<li><img src="img/airshowOutside/pic10.jpg" alt=""/></li>
+										<li><img src="img/airshowOutside/pic11.jpg" alt=""/></li>
+										<li><img src="img/airshowOutside/pic12.jpg" alt="" style="width: 170px; height: 237px;"/></li>
+									</ul>
+								</nav>
+		            		</section>
+		    			</div>
+		    			<div class="introductionText_right r re">
+		    				<br /><br /><br /><br /><br />
+		    				航展表演图片集1
+		    			</div>
+		    		</div>
+		    		<div class="introductionBig">
+		    			<div class="introductionText_left l re">
+		            		<br /><br /><br /><br /><br />
+		    				航展表演图片集2
+		    			</div>
+		    			<div class="introductionPic_right r re">
+		    				<section>
+		            			<div class="door-l"></div>
+								<div class="door-r"></div>
+								<nav>
+									<ul class="airshowBeauty">
+										<li style="width: 200px; height: 237px;"></li>
+										<li><img src="img/airshowNight/pic1.jpg" alt=""/></li>
+										<li><img src="img/airshowNight/pic2.jpg" alt=""/></li>
+										<li><img src="img/airshowNight/pic3.jpg" alt=""/></li>
+										<li><img src="img/airshowNight/pic4.jpg" alt=""/></li>
+										<li><img src="img/airshowNight/pic5.jpg" alt=""/></li>
+										<li><img src="img/airshowNight/pic6.jpeg" alt=""/></li>
+										<li><img src="img/airshowNight/pic7.jpg" alt=""/></li>
+										<li><img src="img/airshowNight/pic8.jpeg" alt=""/></li>
+										<li><img src="img/airshowNight/pic9.jpg" alt="" style="width: 170px; height: 237px;"/></li>
+										<li><img src="img/airshowNight/pic10.jpeg" alt=""/></li>
+										<li><img src="img/airshowNight/pic11.jpeg" alt=""/></li>
+										<li><img src="img/airshowNight/pic12.jpg" alt=""/></li>
+									</ul>
+								</nav>
+		            		</section>
+		    			</div>
+		    		</div>
+		    		<div class="introductionBig">
+		    			<div class="introductionPic_left l re">
+		    				<video width="430" height="250" controls="controls">
+		            			<source src="img/航咖公众号介绍视频.mp4" type="video/mp4"></source>
+		            		</video>
+		    			</div>
+		    			<div class="introductionText_right r re">
+		    				<br /><br /><br /><br /><br />
+		    				航展介绍视频
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div id="foot">
+		    	<div class="foot_menu re">
+		    		<ul class="ab">
+		    			<li class="l"><a href="index.html">学习生涯</a></li>
+		    			<li class="l"><a href="社团活动.html">社团活动</a></li>
+		    			<li class="l"><a href="志愿者.html">
+		    				志&nbsp;&nbsp;愿&nbsp;&nbsp;者</a></li>
+		    			<li class="l"
+		    				style="border-right-style:solid ;
+				            border-right-width: 2px;
+				            border-color: aliceblue;">
+				            <a href="炎黄跑团.html">炎黄跑团</a>
+		    			</li>
+		    		</ul>
+		    		<p class="ab">分享到：</p>
+		    		<a href="#"><div class="share ab"></div></a>
+		    	</div>
+		    	<div class="copyright">
+		    		<p>
+		    			联系电话：13326468297&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    			邮箱：w1p2f3@126.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    			单位：郑州航空工业管理学院<br />
+		    			copyright © 2016-2020 WPF 版权所有，翻录必究
+		    		</p>
+		    	</div>
+		    	<div class="go_top">
+		    		<a href="#all" class="scroll">
+		    			<img src="img/foot_top.png"/>
+		    		</a>
+		    	</div>
+		    </div>
+		</div>
+	</body>
+</html>

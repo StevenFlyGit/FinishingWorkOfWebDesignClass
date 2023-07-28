@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<link href='http://cdn.webfont.youziku.com/webfonts/nomal/125895/46024/5c09cfe5f629de0778a43de6.css' rel='stylesheet' type='text/css' />
+		
 		<title>
 			steven小屋
 		</title>
@@ -127,6 +127,15 @@
 				position: absolute;
 				top: 10px;
 				right: 180px;
+			}
+			.art>div{
+				width: 200px;
+				height: 200px;
+				background: url(img/顶糕.jpg);
+				position: absolute;
+				right: -80px;
+				top: 0;
+				display: none;
 			}
 			.container {
 	            position: relative;
@@ -449,13 +458,24 @@
 		    	    	<h1 style="font-family: 楷体 ;font-size: 45px;">
 		    	    		个人简介</h1>
 		    	    	<hr/>
-		    	    	<p>
+		    	    	<p >
 		    	    	姓名：王鹏飞<br />性别：男<br />民族：汉族<br />
 		    	    	性格：活泼开朗、热情大方<br />
-		    	    	爱好：羽毛球、跑步、游泳、健身<br />家乡：湖北省荆州市
+		    	    	爱好：羽毛球、跑步、游泳、健身<br />家乡：湖北省<span id="showHomePic" style="cursor: pointer;">荆州市</span>
 		    	    	<br />居住地：广东省广州市<br />学校：郑州航空工业管理学院
 		    	    	<br />专业：计算机学院网络工程
 		    	    	</p>
+		    	    	<div id="homepic"></div>
+		    	    	<script type="text/javascript">
+							document.getElementById("showHomePic").onmouseover =  function showHomePic() {
+								let homepic = document.getElementById("homepic");
+								homepic.style.display = "block";	
+							}
+							document.getElementById("showHomePic").onmouseout =  function showHomePic() {
+								let homepic = document.getElementById("homepic");
+								homepic.style.display = "none";	
+							}
+						</script>
 		    	    </div>
 		    	    <div>
 		    		
@@ -585,4 +605,5 @@
 		</div>
 		<!--<a href="" id="gotop">冲上去</a>-->
 	</body>
+	
 </html>

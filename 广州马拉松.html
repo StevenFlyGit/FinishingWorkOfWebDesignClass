@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>
+			steven小屋-炎黄跑团
+		</title>
+		<style type="text/css">
+			*{
+				margin: 0px;padding: 0px;
+			}
+			.mains,.mains::before,.mains::after{
+				box-sizing: border-box;
+			}
+			body{
+				margin: 0px;padding: 0px;
+			}
+			.r{float: right;}
+			.l{float: left;}
+			.bl{display: block;}
+			.ab{position: absolute;}
+			.re{position: relative;}
+			ul{list-style: none;}
+			a{text-decoration: none;
+			color: black;}
+			@font-face {
+				font-family: "z1";
+				src: url("font/f.ttf");
+			}@font-face {
+				font-family: "z2";
+				src: url("font/e.otf");
+			}
+			@keyframes clipMe {
+				0%,100% {
+				 	clip: rect(0px, 1100.0px, 10px, 0px);
+				}
+				25% {
+				    clip: rect(0px, 10px, 1100.0px, 0px);
+				}
+				50% {
+					clip: rect(1090.0px, 1100.0px, 1100.0px, 0px);
+				}
+				75% {
+				    clip: rect(0px, 1100.0px, 1100.0px, 1090.0px);
+				}
+			}
+			#all{
+				width: 100%;
+				height: auto;
+				background: rgb(13,36,54);
+			}
+			#top{
+				width: 1200px;
+				height: 180px;
+				margin: 0px auto;
+				background: url(img/top-bg.jpg) no-repeat;
+				background-position: -110px 0px;
+			}
+			#top h1{
+				font: "arial narrow";
+				margin: 30px 60px 0px 0px;
+				font-size: 45px;
+				color: azure;
+			}
+			.logo{
+				margin: 15px 0px 0px 60px;
+			}
+			/*.search{
+				height: 30px;width: 155px;
+				top: 71px;left: 100px;
+			}
+			.searchr{
+				height: 26px;width: 120px;
+				background: #F1F1F1;
+			}
+			.searchl{
+				height: 30px;width: 25px;
+				background: url(img/wpfsearch.jpg) no-repeat center;
+				background-size: 100% 100%;
+				border-right: 2px;
+				display: block;
+				float: left;
+			}*/
+			#navigation{
+				width: 1000px;
+				height: 40px;
+				margin: 0px auto;
+				background: rgb(31,136,217);
+				border-bottom: 2px solid #F0F8FF;
+			}
+			#navigation li{
+				font-family: z2;
+				font-size: 21px;
+			}
+			.guide{
+				width: 900px;
+				height: 40px;
+			}
+			.guide li{
+				width: 150px;
+				text-align: center;
+				line-height: 40px;
+				border-color: rgb(180,180,180);
+			}
+			.lir{
+				border-left-style: solid;
+			}
+			.lir:hover{
+				background: url(img/menu.jpg) center;
+			}
+			.ma{
+				color: white;
+			}
+			#banner{
+				width: 1000px;
+				height: 300px;
+				margin: 0px auto;
+				background: url(img/banner_wrapper.png);
+			}
+			#banner1{
+				height: 250px;
+				width: 100%;
+				position: relative;
+				top: 25px;
+			}
+			#banner .pic1{
+				position: absolute;
+				top: 20px;
+				left: 100px;
+				padding: 10px;
+				border-color: white;
+				border-style: solid;
+			}
+			.art{
+				color: white;
+				position: absolute;
+				right: 100px;
+				width: 500px;height: 200px;
+				text-indent: 2em;
+			}
+			#main{
+				width: 1000px;
+				min-height: 1100px;
+				margin: 0px auto;
+				background: rgb(209,209,209);
+				position: relative;
+			}
+			
+            #main p{
+            	font-family: 楷体;
+            	color: cornflowerblue;
+            }
+            
+            .introductionBig{
+            	width: 100%;
+            	height: 350px;
+            	font-size: 20px;
+            	line-height: 25px;
+            	padding-top: 30px;
+            	
+            }
+            .introductionBig>div{
+            	width: 45%;
+            	height: 100%;
+            	box-sizing: border-box;
+            	text-align: center;
+            	font-size: 30px;
+            }
+            .introductionText_left{
+            	border-left: skyblue solid 4px;
+				border-bottom: skyblue solid 4px;
+				border-bottom-left-radius: 30px;
+				padding: 0px 0px 10px 10px;
+				left: 25px;
+            }
+            .introductionPic_right{
+            	border-left: skyblue groove 4px;
+            	right: 25px;
+            }
+            .introductionText_right{
+            	border-right: skyblue solid 4px;
+				border-bottom: skyblue solid 4px;
+				border-bottom-right-radius: 30px;
+				padding: 0px 10px 10px px;
+				right: 25px;
+            }
+            .introductionPic_left{
+            	border-right: skyblue groove 4px;
+            	left: 25px;
+            }
+            
+            
+			#foot{
+				width: 100%;
+				height: 120px;
+				margin: 0px auto;
+				background: url(img/foot_wrapper.png) repeat-x;
+				font-size: small;
+			}
+			.foot_menu{
+				width: 1000px;
+				height: 50px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			.foot_menu ul{
+				height: 30px;
+				line-height: 30px;
+				margin: 0 auto;
+				padding-top: 10px;
+				left: 150px;
+			}
+			.foot_menu li{
+				width: 100px;
+				border-left-style:solid ;
+				border-left-width: 2px;
+				border-color: aliceblue;
+			}
+            .foot_menu a:hover{
+	            color: aliceblue;
+			}
+			.share{
+				top: 5px;
+				right: 100px;
+				width: 220px;
+				height: 40px;
+				width: 220px;
+				background: url(img/share.png) top;
+			}
+			.share:hover{
+				background: url(img/share.png);
+				background-position: 0px 47px;
+			}
+			.foot_menu p{
+				right: 320px;
+				top: 15.6px;
+				margin: 0 auto;			
+			}
+			.go_top{
+				text-align: center;
+				adding-top: 10px;
+			}
+			.copyright{
+				width: 1000px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			#go_top{
+				position: fixed;
+				right: 50px;
+				bottom: 100px;
+			}
+			
+		</style>
+		
+		
+	</head>
+	<body>
+		<div id="all">
+			<div id="top">
+				<img src="img/logo.png"/ class="logo">
+				<h1 class="r">我 的 世 界</h1>
+				<!--<div class="search re">
+		    		<form action="" method="post">
+		    			<a href="www.baidu.com" class="searchl"></a>
+		    		    <input class="searchr" type="text" value="请输入搜索内容">
+		    	    </form>
+		    	</div>-->
+			</div>
+		    <div id="navigation">
+		    	<ul class="guide">
+		    		<li class="l" style="background: url(img/menu.jpg) center;
+		    			font-size: x-large;width: 160px;">
+		    			<a href="index.html" class="ma" target="_blank">Do myself</a>
+		    		</li>
+		    		<li class="l ma" style="width: 80px;">
+		    			爱好</li>
+		    		<li class="l lir">
+		    			<a href="index.html" class="ma bl" target="_blank">学习生涯</a>
+		    		</li>
+		    		<li class="l lir">
+		    			<a href="社团活动.html" class="ma bl" target="_blank">社团活动</a>
+		    		</li>
+		    		<li class="l lir">
+		    			<a href="志愿者.html" class="ma bl" target="_blank">志&nbsp;愿&nbsp;者</a>
+		    		</li>
+		    		<li class="l lir" style="border-right-style: solid ;">
+		    			<a href="炎黄跑团.html" class="ma bl" target="_blank">炎黄跑团</a>
+		    		</li>
+		    	</ul>
+		    </div>
+		    <div id="banner">
+		    	<div id="banner1">
+		    		<div class="pic1 l" >
+		    		<img src="img/gzMarathon.jpg"/> 
+		    	    </div>
+		    	    <div class="art r">
+		    	    	<h1 style="font-family: 楷体 ;font-size: 45px;">
+		    	    		广州国际马拉松</h1>
+		    	    	<hr/>
+		    	    	<p style="font-size: 16px;text-indent: 33px;
+		    	    		padding-top: 15px;">
+		    	    		广州国际马拉松赛是经国家体育总局、广东省人民政府和广州市人民政府批准，
+		    	    		由国际田联和国际马拉松及公路跑协会备案的中国高水平马拉松赛 ，是国际田联路跑金标赛事，
+		    	    		也是中国田径协会金牌赛事。赛事于2012年创办，每年的11月下旬在广州举办，2013年被中国田径协会评选为银牌赛事。
+		    	    		2013年起，广马赛道主要沿珠江两岸设置，集中展示了珠江两岸最具岭南特色的人文风情、最具羊城历史的风景名胜，
+		    	    		最具时尚气息的文化潮流，被国际田联公认为是当今世界马拉松赛最美赛道之一。
+		    	    	</p>
+		    	    </div>
+		    	    <div>
+		    		
+		    	    </div>
+		    	</div>
+		    </div>
+		    <div id="main">
+		    	<div class="mains">
+		    		<div class="introductionBig">
+		    			<div class="introductionText_left l re">
+		    				<br /><br /><br /><br /><br /><br />
+		    				比赛起点处
+		    			</div>
+		    			<div class="introductionPic_right r re">
+		    				<img src="img/gzMarathon/pic1.jpg" width="400px" style="margin-top: 50px;"/>
+		    			</div>
+		    		</div>
+		    		<div class="introductionBig">
+		    			<div class="introductionPic_left l re">
+		    				<img src="img/gzMarathon/pic2.jpg" alt="" height="350px"/>
+		    				<img src="img/gzMarathon/pic3.jpg" alt="" height="350px"/ />
+		    			</div>
+		    			<div class="introductionText_right r re">
+		    				<br /><br /><br /><br /><br /><br />
+		    				沿途路过的风景
+		    			</div>
+		    		</div>
+		    		<div class="introductionBig">
+		    			<div class="introductionText_left l re">
+		    				<br /><br /><br /><br /><br /><br />
+		    				全程手机记录
+		    			</div>
+		    			<div class="introductionPic_right r re">
+		    				<img src="img/gzMarathon/pic4.jpg" height="350px" />
+		    			</div>
+		    		</div>
+		    		<div class="introductionBig">
+		    			<div class="introductionPic_left l re">
+		    				<img src="img/gzMarathon/pic5.jpg" alt="" height="350px"/>
+		    			</div>
+		    			<div class="introductionText_right r re">
+		    				<br /><br /><br /><br /><br /><br />
+		    				官方成绩证书
+		    			</div>
+		    		</div>
+		    		<div class="introductionBig">
+		    			<div class="introductionText_left l re">
+		    				<br /><br /><br /><br /><br /><br />
+		    				完赛奖牌
+		    			</div>
+		    			<div class="introductionPic_right r re">
+		    				<img src="img/gzMarathon/pic6.jpg" height="350px" />
+		    			</div>
+		    		</div>
+		    		<div class="introductionBig" style="height: 550px;">
+		    			<div class="introductionPic_left l re">
+		    				<img src="img/gzMarathon/pic7.jpg" alt="" width="400px"/>
+		    				<img src="img/gzMarathon/pic8.jpg" alt="" width="400px"/>
+		    			</div>
+		    			<div class="introductionText_right r re">
+		    				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		    				赛前赛后合影
+		    			</div>
+		    		</div>
+		    		<div class="introductionBig">
+		    			<div class="introductionText_left l re">
+		    				<br /><br /><br /><br /><br /><br />
+		    				小视频
+		    			</div>
+		    			<div class="introductionPic_right r re">
+		    				<video width="215" height="250" controls="controls">
+		            			<source src="img/gzMarathonMovie1.mp4" type="video/mp4"></source>
+		            		</video>
+		            		<video width="215" height="250" controls="controls">
+		            			<source src="img/gzMarathonMovie2.mp4" type="video/mp4"></source>
+		            		</video>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div id="foot">
+		    	<div class="foot_menu re">
+		    		<ul class="ab">
+		    			<li class="l"><a href="index.html">学习生涯</a></li>
+		    			<li class="l"><a href="社团活动.html">社团活动</a></li>
+		    			<li class="l"><a href="志愿者.html">
+		    				志&nbsp;&nbsp;愿&nbsp;&nbsp;者</a></li>
+		    			<li class="l"
+		    				style="border-right-style:solid ;
+				            border-right-width: 2px;
+				            border-color: aliceblue;">
+				            <a href="炎黄跑团.html">炎黄跑团</a>
+		    			</li>
+		    		</ul>
+		    		<p class="ab">分享到：</p>
+		    		<a href="#"><div class="share ab"></div></a>
+		    	</div>
+		    	<div class="copyright">
+		    		<p>
+		    			联系电话：13326468297&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    			邮箱：w1p2f3@126.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    			单位：郑州航空工业管理学院<br />
+		    			copyright © 2016-2020 WPF 版权所有，翻录必究
+		    		</p>
+		    	</div>
+		    	<div class="go_top">
+		    		<a href="#all" class="scroll">
+		    			<img src="img/foot_top.png"/>
+		    		</a>
+		    	</div>
+		    </div>
+		</div>
+	</body>
+</html>
